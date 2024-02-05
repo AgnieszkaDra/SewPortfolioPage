@@ -1,8 +1,14 @@
 
-const Category = () => {
+
+const Category = (props) => {
+    const { content } = props
+    console.log(content)
     return (
         <>
-        <h2>Bluzy</h2>
+        <div>
+             <p>{content}</p>
+        </div>
+       
         </>
     );
  };

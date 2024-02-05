@@ -1,29 +1,21 @@
 import { useState } from 'react';
 import Category from './Category';
-import ProductsCategories from './ProductsCategories';
+import ProductsCategory from './ProductsCategory';
 import products from '../../data/products';
 
 import styles from './Products.module.scss';
 
 
-interface ProductsContainer {
-    displayedCategorySettings: {
-    setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
-  };
-}
 
-const ProductsContainer = (props: ProductsContainer) => {
+const ProductsContainer = () => {
   const [isDisplayingCategory, setDisplayingCategory] = useState(false);
 
   const renderListItem = (item, i) => {
     return (
-      <ProductsCategories
-        editable={false}
-        key={i}
-        displayedCategorySettings={props.displayedCategorySettings}
+      <ProductsCategory
+        key={item.id}
         content={item.name}
       />
-       
     )
   }
   
