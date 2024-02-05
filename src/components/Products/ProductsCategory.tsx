@@ -1,16 +1,18 @@
+import React from 'react';
 import Category from "./Category";
 
-interface ProductsCategory {
-    content: string; 
+interface ProductsCategoryProps {
+    content: string;
 }
-const ProductsCategory = (props: ProductsCategory, ) => {
-      const { content } = props;
+
+const ProductsCategory: React.FC<ProductsCategoryProps> = (props) => {
+    const { content } = props;
 
     return (
         <>
-        <Category content={content}></Category>
+            <Category content={content}></Category>
         </>
     );
-  };
-  
-  export default ProductsCategory
+};
+
+export default ProductsCategory;

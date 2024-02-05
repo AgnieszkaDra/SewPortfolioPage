@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Category from './Category';
+// import Category from './Category';
 import ProductsCategory from './ProductsCategory';
 import { v4 as uuidv4 } from 'uuid'
 // import products, {ProductsCategory } from '../../data/products';
@@ -47,7 +47,7 @@ const ProductsContainer = () => {
   }
   
   if (isDisplayingCategory) {
-      return <Category/>;
+      return ''
    } else {
       return (
          <div className={styles.section}>
