@@ -1,6 +1,5 @@
 
-
-const Category = (props) => {
+const Category = (props: unknown) => {
     const { content } = props
     console.log(content)
     return (

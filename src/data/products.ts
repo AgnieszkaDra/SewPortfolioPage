@@ -1,6 +1,14 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
+interface ProductsCategory {
+  name: string;
+  id: string;
+}
 
-export const products = {
+interface Products {
+  categories: ProductsCategory[];
+}
+
+export const products: Products = {
       categories: [
       {
         name: 'Bluzy',
@@ -17,4 +25,3 @@ export const products = {
     ]
   }
   
-  export default products
