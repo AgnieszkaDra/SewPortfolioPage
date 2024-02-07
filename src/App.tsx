@@ -1,12 +1,17 @@
-import ProductsContainer from './components/Products/ProductsContainer'
-import './App.css'
+import React from 'react';
+import Category from './components/Category';
+import { AppProps } from './interfaces';
 
-function App() {
+const App: React.FC<AppProps> = ({ data }) => {
   return (
-    <div className='App'>
-      <ProductsContainer></ProductsContainer>
-    </div>
-  )
-}
+    <div >
+  {data.categories.map((category) => (
+      <Category key={category.id} {...category} />
+   
+    ))}
+  </div>
+  );
+};
 
-export default App
+export default App;
+

@@ -1,17 +1,20 @@
 import { v4 as uuidv4 } from 'uuid'
-interface ProductsCategory {
-  name: string;
-  id: string;
-  collection?: Collection;
-}
+import { Products } from '../interfaces'
+// interface ProductsCategory {
+//   name: string;
+//   id: string;
+//   collection?: Collection;
+// }
 
-interface Products {
-  categories: ProductsCategory[];
-}
+// interface Products {
+//   categories: ProductsCategory[];
+// }
 
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200 }
 
-export const products: Products = {
+
+
+export const products1: Products = {
       categories: [
       {
         name: 'Bluzy',
@@ -30,4 +33,6 @@ export const products: Products = {
       },
     ]
   }
+
+  export default products1
   
