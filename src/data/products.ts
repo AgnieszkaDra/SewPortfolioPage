@@ -1,38 +1,32 @@
 import { v4 as uuidv4 } from 'uuid'
 import { Products } from '../interfaces'
-// interface ProductsCategory {
-//   name: string;
-//   id: string;
-//   collection?: Collection;
-// }
-
-// interface Products {
-//   categories: ProductsCategory[];
-// }
+import basic1 from '../assets/basics/basic1.jpg'
 
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200 }
 
-
-
-export const products1: Products = {
+export const products: Products = {
       categories: [
       {
         name: 'Bluzy',
         id: uuidv4(),
+        images: [basic1],
+        editable: false,
         collection: Collection.BASIC
       },
       {
         name: 'Mama i Ja',
         id: uuidv4(),
+        editable: false,
         collection: Collection.MOTHER__AND__CHILD
       },
       {
         name: 'Akcesoria',
         id: uuidv4(),
+        editable: false,
         collection: Collection.ACCESSORIES
       },
     ]
   }
 
-  export default products1
+  export default products
   
