@@ -7,6 +7,7 @@ import products from '../../data/products.ts';
 import styles from './Products.module.scss';
 
 const ProductsContainer:React.FC<ProductsContainerProps>= ({displayedCategorySettings}) => {
+  
 
     return (
       <section className={styles.section}>
