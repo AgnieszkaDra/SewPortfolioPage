@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CategoryProps } from '../interfaces';
+import { CategoryProps } from '../../interfaces';
 
 
 const Category: React.FC<CategoryProps> = ({ name, images }) => {

@@ -29,4 +29,3 @@ export const products: Products = {
   }
 
   export default products
-  

@@ -13,6 +13,9 @@ export interface Products {
    categories: CategoryProps[];
  }
  
-export interface AppProps {
+export interface ProductsContainerProps {
    data: Products;
+   displayedCategorySettings: {
+      setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
+    };
  }
