@@ -1,18 +1,18 @@
-import React from 'react';
-import Category from './components/Category';
-import { AppProps } from './interfaces';
+import { useState } from 'react';
+import ProductsContainer from './components/Products/ProductsContainer.tsx';
+import products from './data/products.ts'
 
-const App: React.FC<AppProps> = ({ data }) => {
+const App = () => {
+  const [isDisplayingCategory, setIsDisplayingCategory] = useState(false);
+  const displayedCategorySettings = { setIsDisplayingCategory, isDisplayingCategory};
+
   return (
-    <div >
-  {data.categories.map((category) => (
-      <Category key={category.id} images={category.images}  {...category} name={category.name} id={category.id} editable={false} collection={category.collection}/>
-   
-    ))}
-  </div>
+      <ProductsContainer 
+        data={products} 
+        displayedCategorySettings={displayedCategorySettings}
+      />
   );
 };
 
 export default App;
-
 
