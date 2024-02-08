@@ -7,11 +7,9 @@ export interface CategoryProps {
    editable: boolean;
    collection: Collection;
    displayedCategorySettings?: {
-      // displayedProduct: ProductData;
-      // setDisplayedProduct: React.Dispatch<React.SetStateAction<ProductData>>;
       setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
-
-    };
+      setSelectedCategoryId: React.Dispatch<React.SetStateAction<string | null>>;
+   };
 }
  
 
@@ -20,12 +18,19 @@ export interface Products {
  }
  
 export interface ProductsContainerProps {
-   // data: Products;
    displayedCategorySettings: {
-      // displayedProduct: ProductData;
-      // setDisplayedProduct: React.Dispatch<React.SetStateAction<ProductData>>;
+   setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
+   setSelectedCategoryId: React.Dispatch<React.SetStateAction<string | null>>;
+   };
+}
+
+ export interface ProductDetailsProps {
+
+   displayedCategorySettings: {
+   
       setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
     };
+    categoryId: string | null;
    //  selectedCategoryId?: string
  }
 

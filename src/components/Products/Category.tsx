@@ -2,9 +2,10 @@ import React  from 'react';
 import { CategoryProps } from '../../interfaces';
 
 
-const Category: React.FC<CategoryProps> = ({ name, editable, displayedCategorySettings }) => {
+const Category: React.FC<CategoryProps> = ({ name, id, editable, displayedCategorySettings }) => {
   const onOpenCategory = () => {
     displayedCategorySettings?.setIsDisplayingCategory(true);
+    displayedCategorySettings?.setSelectedCategoryId(id);
  };
 
   return (
