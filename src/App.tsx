@@ -7,9 +7,7 @@ const App = () => {
   const [isDisplayingCategory, setIsDisplayingCategory] = useState(false);
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
   const displayedCategorySettings = { setIsDisplayingCategory, setSelectedCategoryId};
-  console.log(selectedCategoryId)
-
-
+ 
   if (isDisplayingCategory && selectedCategoryId) {
     return (<ProductDetails 
       displayedCategorySettings={displayedCategorySettings} 
@@ -17,11 +15,11 @@ const App = () => {
       />);
  } else {
   return (
-    <>
+    <div className='App'>
      <ProductsContainer 
         displayedCategorySettings= {displayedCategorySettings}
       />
-    </>
+    </div>
      
   );
   }

@@ -17,7 +17,8 @@ const ProductsContainer:React.FC<ProductsContainerProps>= ({displayedCategorySet
             images={category.images}  
             name={category.name} 
             id={category.id} 
-            editable={false} 
+            editable={false}
+            background={category.background}
             collection={category.collection}
             displayedCategorySettings={displayedCategorySettings}
           />

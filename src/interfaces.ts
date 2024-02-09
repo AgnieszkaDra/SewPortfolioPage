@@ -1,9 +1,10 @@
-enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200 }
+enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200, SKIRTS = 300 }
 
 export interface CategoryProps {
    name: string;
    id: string;
    images?: string[];
+   background?: string
    editable: boolean;
    collection: Collection;
    displayedCategorySettings?: {
