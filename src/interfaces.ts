@@ -32,6 +32,7 @@ export interface ProductsContainerProps {
       setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
     };
     categoryId: string | null;
+    editable: boolean;
    //  selectedCategoryId?: string
  }
 
