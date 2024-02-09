@@ -11,7 +11,8 @@ const ProductsContainer:React.FC<ProductsContainerProps>= ({displayedCategorySet
 
     return (
       <section className={styles.section}>
-        {products.categories.map((category) => (
+        <div className={styles.categories}>
+          {products.categories.map((category) => (
           <Category 
             key={category.id} 
             images={category.images}  
@@ -23,6 +24,7 @@ const ProductsContainer:React.FC<ProductsContainerProps>= ({displayedCategorySet
             displayedCategorySettings={displayedCategorySettings}
           />
         ))}
+        </div>
       </section>
     );
   }

@@ -9,7 +9,8 @@ const App = () => {
   const displayedCategorySettings = { setIsDisplayingCategory, setSelectedCategoryId};
  
   if (isDisplayingCategory && selectedCategoryId) {
-    return (<ProductDetails 
+    return (<ProductDetails
+      editable={false} 
       displayedCategorySettings={displayedCategorySettings} 
       categoryId={selectedCategoryId}
       />);
