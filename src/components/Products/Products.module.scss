@@ -1,28 +1,62 @@
 @font-face {
     font-family: 'Jost';
     src: url('/path/to/your/font/Jost-Regular.woff2') format('woff2'),
-         url('/path/to/your/font/Jost-Regular.woff') format('woff');
+        url('/path/to/your/font/Jost-Regular.woff') format('woff');
+}
+
+@keyframes slideUp {
+    from {
+        bottom: -100px;
+    }
+    to {
+        bottom: 0;
+    }
 }
 
 .section {
     width: 100%;
     padding: 0 60px;
-      &__nav {
+
+    &__nav {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        & > * {
+        margin: 20px 0;
+
+        &>* {
             display: flex;
+            flex-direction: column;
+        }
+        &__h5 {
+            font-size: 14px;
+            color: #999999;
         }
     }
 
+    &__title {
+        text-align: center;
+    }
+
 }
+
+.open {
+    animation: slideUp 2s ease-in-out forwards;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
 
 .categories {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
-    
+
     @media screen and (max-width: 767px) {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -30,8 +64,6 @@
     @media screen and (max-width: 575px) {
         grid-template-columns: 1fr;
     }
-
-  
 }
 
 .category {
@@ -41,48 +73,68 @@
     background-repeat: no-repeat;
     background-position: center;
     filter: grayscale(80%);
-    
+
     &__content {
-        
-        
- 
         display: grid;
-        grid-template-rows: 150px 150px;
-    
-     
-       
+        grid-template-rows: 200px 100px;
         color: white;
+
         h2 {
             text-align: right;
         }
-       
+
     }
+
     &__name {
         display: block;
         width: 100%;
-       
+
         h2 {
-           text-align: end;  
+            text-align: end;
         }
     }
+
     &__link {
         font-size: 1.2rem;
         display: grid;
         grid-template-columns: 60% 40%;
         position: relative;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            color: whitesmoke;
+            font-size: 1.3rem;
+        }
+       
+        &::after {
+            content: '';
+            height: 2px;
+            width: 0;
+            background-color: currentColor;
+            position: absolute;
+            bottom: 0px;
+            left: 10px;
+            -webkit-transition: width .25s;
+            transition: width .25s;
+        }
+
+        &:hover::after {
+            width: 90%;
+        }
     }
+
     &__span {
         grid-column: 1/2;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-       
-      
+
+        &:hover {
+            background: 0;
+        }
     }
+
     &__arrow {
         grid-column: 2/3;
         display: flex;
@@ -94,11 +146,10 @@
 
 .products {
     width: 100%;
-   
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
-    
+
     @media screen and (max-width: 767px) {
         grid-template-columns: repeat(2, 1fr);
     }

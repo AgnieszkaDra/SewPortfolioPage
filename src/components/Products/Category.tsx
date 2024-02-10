@@ -5,7 +5,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import styles from './Products.module.scss';
 
 
-const Category: React.FC<CategoryProps> = ({ name, id, editable, displayedCategorySettings, background }) => {
+const Category: React.FC<CategoryProps> = ({ name, id, editable, displayedCategorySettings,  background }) => {
+
   const onOpenCategory = () => {
     displayedCategorySettings?.setIsDisplayingCategory(true);
     displayedCategorySettings?.setSelectedCategoryId(id);
