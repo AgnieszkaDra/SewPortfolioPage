@@ -28,7 +28,7 @@ export interface ProductsContainerProps {
  export interface ProductDetailsProps {
 
    displayedCategorySettings: {
-   
+      
       setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
     };
     categoryId: string | null;

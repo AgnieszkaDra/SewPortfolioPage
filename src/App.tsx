@@ -6,7 +6,7 @@ import ProductsContainer from './components/Products/ProductsContainer.tsx';
 const App = () => {
   const [isDisplayingCategory, setIsDisplayingCategory] = useState(false);
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
-  const displayedCategorySettings = { setIsDisplayingCategory, setSelectedCategoryId};
+  const displayedCategorySettings = { setIsDisplayingCategory, setSelectedCategoryId, isDisplayingCategory};
  
   if (isDisplayingCategory && selectedCategoryId) {
     return (<ProductDetails
