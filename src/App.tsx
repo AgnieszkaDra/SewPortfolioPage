@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ProductDetails from './components/Products/ProductDetails.tsx';
 import ProductsContainer from './components/Products/ProductsContainer.tsx';
+import CategoriesContainer from './components/Products/CategoriesContainer.tsx';
 
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
   const displayedCategorySettings = { setIsDisplayingCategory, setSelectedCategoryId, isDisplayingCategory};
  
   if (isDisplayingCategory && selectedCategoryId) {
-    return (<ProductDetails
+    return (<ProductsContainer
       editable={false} 
       displayedCategorySettings={displayedCategorySettings} 
       categoryId={selectedCategoryId}
@@ -17,11 +17,10 @@ const App = () => {
  } else {
   return (
     <div className='App'>
-     <ProductsContainer 
+     <CategoriesContainer 
         displayedCategorySettings= {displayedCategorySettings}
       />
     </div>
-     
   );
   }
 }

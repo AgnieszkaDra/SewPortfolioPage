@@ -1,3 +1,5 @@
+@import '../../styleVariables/index';
+
 @font-face {
     font-family: 'Jost';
     src: url('/path/to/your/font/Jost-Regular.woff2') format('woff2'),
@@ -8,6 +10,7 @@
     from {
         bottom: -100px;
     }
+
     to {
         bottom: 0;
     }
@@ -27,6 +30,7 @@
             display: flex;
             flex-direction: column;
         }
+
         &__h5 {
             font-size: 14px;
             color: #999999;
@@ -41,16 +45,17 @@
 
 .open {
     animation: slideUp 2s ease-in-out forwards;
-  }
-  
-  @keyframes slideUp {
+}
+
+@keyframes slideUp {
     from {
-      transform: translateY(100px);
+        transform: translateY(100px);
     }
+
     to {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-  }
+}
 
 .categories {
     display: grid;
@@ -82,7 +87,6 @@
         h2 {
             text-align: right;
         }
-
     }
 
     &__name {
@@ -105,7 +109,7 @@
             color: whitesmoke;
             font-size: 1.3rem;
         }
-       
+
         &::after {
             content: '';
             height: 2px;
@@ -157,4 +161,70 @@
     @media screen and (max-width: 575px) {
         grid-template-columns: 1fr;
     }
+
+    &__product {
+        height: 400px;
+        display: grid;
+        grid-template-rows: 320px 40px 40px;
+        position: relative;
+       
+
+        & > * {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
 }
+
+.product {
+  
+    &__actions {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+        color: $color-lightGrey;
+    }
+    &__title, &__price {
+        color: $color-lightGrey;  
+    }
+}
+
+@mixin transformStyle($rotate, $translateX, $translateY) {
+    transform: rotate($rotate) translateX($translateX) translateY($translateY);
+  }
+
+  .arrowLeft {
+    @include transformStyle(-45deg, -5px, 5px);
+    font-size: 18px;
+  }
+
+  .arrowRight {
+    @include transformStyle(-45deg, 5px, -5px);
+    font-size: 18px;
+  }
+
+  .actions {
+    display: none;
+    &.visible {
+        display: flex;
+    }
+  }
+
+
+
+
+
+
