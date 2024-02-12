@@ -23,25 +23,15 @@ const Category: React.FC<CategoryProps> = ({ name, id, editable, displayedCatego
     onClick={!editable ? onOpenCategory : () => {}}
     >
       <div className={styles.category__content} >
-     
-         <h2 className={styles.category__name}>{name}</h2> 
-    
-         
-      
-        {/* <div>
-          <h5></h5>
-        </div> */}
-        <a className={styles.category__link}>
+        <h2 className={styles.category__name}>{name}</h2> 
+          <a className={styles.category__link}>
           <span className={styles.category__span}>Zobacz produkty</span>
           <div className={styles.category__arrow}>
             <FontAwesomeIcon icon={faArrowRight} />
           </div>
-          
-        </a>
-
+          </a>
       </div>
-     
-    </div>
+     </div>
   );
 };
 

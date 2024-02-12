@@ -14,12 +14,39 @@ import skirtsBackground from '../assets/skirts/skirtsBackground.jpg'
 
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200 , SKIRTS = 300 }
 
+
 export const products: Products = {
       categories: [
       {
         name: 'Bluzy',
         id: uuidv4(),
-        images: [basic1, basic2, basic3, basic4, basic5],
+        items: [
+          {
+            title: 'Blouse-orange',
+            image: basic1,
+            price: 100
+          },
+          {
+            title: 'Blouse blue',
+            image: basic2,
+            price: 90
+          },
+          {
+            title: 'Complet',
+            image: basic3,
+            price: 150
+          },
+          {
+            title: 'Basic4',
+            image: basic4,
+            price: 65
+          },
+          {
+            title: 'Basic5',
+            image: basic5,
+            price: 78
+          }
+        ],
         background: basicBackground,
         editable: false,
         collection: Collection.BASIC
@@ -27,7 +54,18 @@ export const products: Products = {
       {
         name: 'Mama i Ja',
         id: uuidv4(),
-        images: [mothChild1, mothChild2],
+        items: [
+          {
+            title: 'skirt1',
+            image: mothChild1,
+            price: 100
+          },
+          {
+            title: 'skirt2',
+            image: mothChild2,
+            price: 90
+          },
+        ],
         background: mothChildBackground,
         editable: false,
         collection: Collection.MOTHER__AND__CHILD
