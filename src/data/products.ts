@@ -24,7 +24,13 @@ export const products: Products = {
           {
             title: 'Blouse-orange',
             image: basic1,
-            price: 100
+            price: 100,
+            // features:  [
+            //   { description: 'bluza wykonana z bawełny', /* other properties */ },
+            // { description: 'lużny krój', /* other properties */ },
+            // { description: 'ciepła', /* other properties */ }
+            // ],
+            features:  [ 'bluza wykonana z bawełny', 'lużny krój', 'ciepła' ]
           },
           {
             title: 'Blouse blue',
