@@ -1,9 +1,15 @@
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200, SKIRTS = 300 }
 
-interface Item {
-   title: string;
-   image: string; 
-   price: number;
+export interface Item {
+   title?: string;
+   image?: string; 
+   price?: number;
+   index?: number;
+   features?: string[];
+}
+
+export interface Feature {
+   description?: string;
 }
 
 export interface CategoryProps {
@@ -24,18 +30,11 @@ export interface Products {
    categories: CategoryProps[];
  }
 
- interface Item {
-
-   title: string;
-   image: string;
-   // Add other properties as needed
- }
-
- export interface ProductProps {
-
-   index: number;
-   item: Item;
- }
+export interface ProductProps {
+   index?: number;
+   item: Item ;
+   onClick: (item: Item) => void;
+}
  
 export interface CategoriesContainerProps {
    displayedCategorySettings: {
@@ -47,13 +46,11 @@ export interface CategoriesContainerProps {
  export interface ProductsContainerProps {
 
    displayedCategorySettings: {
-      
       setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
     };
     categoryId: string | null;
     editable: boolean;
-   //  selectedCategoryId?: string
- }
+}
 
  export interface ProductData {
    images?: string[];
