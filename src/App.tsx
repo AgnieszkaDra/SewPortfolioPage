@@ -20,7 +20,8 @@ const App = () => {
  } else {
   return (
     <div className='App'>
-      <Router>
+
+     <Router>
         <Routes>
           {<Route path='/' element={<Header/>} />}
           {/* {<Route path='/home' element={<Header/>} />} */}
