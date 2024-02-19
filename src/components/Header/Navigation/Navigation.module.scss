@@ -1,0 +1,72 @@
+@import '../../../abstracts/';
+
+.nav {
+   
+    display: none;
+    &__close {
+        height: 70px;
+        width: 100%;
+        background-color: pink;
+        
+    @media screen and (min-width: 575px) {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    }
+    &__menu {
+       width: 90%;
+        background-color: $color-white;
+        position: relative;
+        padding: 35px 50px 50px;
+        @media screen and (max-width: 575px) {
+            width: 100%;
+            height: 90vh;
+            flex-direction: column;
+        }
+    }
+    &__hamburger {
+        width: 10%;
+        height: 100vh;
+        background-color: $color-lightgrey;
+        @media screen and (max-width: 575px) {
+            width: 100%;
+            height: 10vh;
+            flex-direction: column;
+        }
+    }
+    &.open {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: row; 
+        background-color: bisque;
+        width: 100%;
+        min-height: 100vh;
+        flex-direction: row;
+        @media screen and (max-width: 575px) {
+        flex-direction: column;
+    }
+}
+}
+
+.list {
+    @media screen and (min-width: 575px) {
+        width: 25%;
+    }
+    &__element{
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        margin-bottom: 10px;
+        a {
+            padding: 5px;
+            font-size: 1.15em;
+        }
+    }
+
+}
+
