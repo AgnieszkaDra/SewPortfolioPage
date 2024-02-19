@@ -1,0 +1,42 @@
+.nav {
+   
+    display: none;
+    &__close {
+        height: 70px;
+        width: 100%;
+        background-color: pink;
+        
+    @media screen and (min-width: 575px) {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    }
+    &__menu {
+       width: 90%;
+        background-color: yellow;
+    }
+    &__hamburger {
+        width: 10%;
+        height: 100vh;
+        background-color: bisque;
+    }
+    &.open {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: row; 
+        background-color: bisque;
+        width: 100%;
+        min-height: 100vh;
+        flex-direction: row;
+        @media screen and (max-width: 575px) {
+        flex-direction: column;
+    }
+}
+}
+
