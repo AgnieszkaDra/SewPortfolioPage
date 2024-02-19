@@ -1,5 +1,13 @@
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200, SKIRTS = 300 }
 
+export interface HeaderProps {
+   logo: string
+}
+
+export interface NavigationProps {
+   isNavbarOpen: boolean
+}
+
 export interface Item {
    title?: string;
    image?: string; 
