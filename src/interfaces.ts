@@ -4,6 +4,17 @@ export interface HeaderProps {
    logo: string
 }
 
+
+
+export interface Image {
+   image: string;
+
+}
+
+export interface CarouselProps {
+   images: Image[];
+}
+
 export interface NavigationProps {
    isNavbarOpen: boolean
 }
