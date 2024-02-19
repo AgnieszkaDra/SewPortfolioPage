@@ -15,13 +15,23 @@
 
     }
     &__menu {
-       width: 90%;
+       width: 100%;
         background-color: yellow;
+        @media screen and (min-width: 899px) {
+            width: 90%;
+            height: 100vh;
+        }
     }
     &__hamburger {
-        width: 10%;
-        height: 100vh;
+        width: 100%;
+        height: 10vh;
         background-color: bisque;
+               
+    @media screen and (min-width: 899px) {
+        width: 10%;
+        height: 10vh;
+        
+    }
     }
     &.open {
         position: absolute;
