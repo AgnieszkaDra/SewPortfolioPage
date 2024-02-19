@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductsContainer from './components/Products/ProductsContainer.tsx';
 import CategoriesContainer from './components/Products/CategoriesContainer.tsx';
-import Header from './components/Products/Header/Header.tsx';
+import Header from './components/Header/Header.tsx';
+
+
 
 const App = () => {
   const [isDisplayingCategory, setIsDisplayingCategory] = useState(false);
@@ -18,6 +20,7 @@ const App = () => {
  } else {
   return (
     <div className='App'>
+
      <Router>
         <Routes>
           {<Route path='/' element={<Header/>} />}
@@ -35,4 +38,5 @@ const App = () => {
 
 
 export default App;
+
 

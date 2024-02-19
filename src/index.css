@@ -3,12 +3,15 @@
   src: url('/path/to/your/font/Jost-Regular.woff2') format('woff2'),
        url('/path/to/your/font/Jost-Regular.woff') format('woff');
 }
-
 body {
   margin: 0;
   overflow-x: hidden;
   font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  box-sizing: border-box;
 }
+
 
 .App {
   max-width: 100%;
