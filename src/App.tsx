@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductsContainer from './components/Products/ProductsContainer.tsx';
 import CategoriesContainer from './components/Products/CategoriesContainer.tsx';
-import Header from './components/Products/Header/Header.tsx';
-import Carousel from './components/Carousel/Carousel.tsx';
-import carousel from './data/carousel.ts';
+import Header from './components/Header/Header.tsx';
+
 
 
 const App = () => {
@@ -20,8 +20,14 @@ const App = () => {
  } else {
   return (
     <div className='App'>
-      <Header></Header>
-      <Carousel images={carousel}></Carousel>
+
+     <Router>
+        <Routes>
+          {<Route path='/' element={<Header/>} />}
+          {/* {<Route path='/home' element={<Header/>} />} */}
+        </Routes>
+      </Router>
+     
      <CategoriesContainer 
         displayedCategorySettings= {displayedCategorySettings}
       />
@@ -32,4 +38,5 @@ const App = () => {
 
 
 export default App;
+
 
