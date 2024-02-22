@@ -8,6 +8,7 @@ export interface HeaderProps {
 
 export interface Image {
    image: string;
+   href: string
 
 }
 
