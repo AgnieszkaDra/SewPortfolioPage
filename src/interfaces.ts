@@ -13,6 +13,7 @@ export interface Image {
 
 export interface CarouselProps {
    images: Image[];
+   interval: number
 }
 
 export interface NavigationProps {
