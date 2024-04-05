@@ -1,4 +1,15 @@
-# Start to learn TypeScript
+**Overview**
+
+Sew Portfolio Page is a project written with React and TypeScript(to practise it) and will be in the future a part of the whole website https://grand-parfait-5450ef.netlify.app/
+<p>
+  <img src="./src/assets/image-readme.png" alt="view" width="100%" max-width="600px"/>
+</p>
+
+## Technology Stack
+
+[![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)] [![TypeScript](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)] 
+
+🖥 **Features**
 
 # React + TypeScript + Vite
 

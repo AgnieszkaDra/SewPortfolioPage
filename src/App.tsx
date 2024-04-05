@@ -23,7 +23,7 @@ const App = () => {
 
      <Router>
         <Routes>
-          {<Route path='/' element={<Header/>} />}
+          {/* {<Route path='/' element={<Header/>} />} */}
           {/* {<Route path='/home' element={<Header/>} />} */}
         </Routes>
       </Router>
