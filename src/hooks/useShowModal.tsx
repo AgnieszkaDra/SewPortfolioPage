@@ -6,22 +6,21 @@ import { useState } from "react";
   price?: number;
 }
 
-export const useShowModal = () => {
+export const useShowProduct = () => {
  
-  const [showModal, setShowModal] = useState(false);
+  const [showProduct, setShowProduct] = useState(false);
   const [selectedItem , setSelectedItem] = useState(Object); 
 
 
-  const handleOpenModal = (item: Item) => {
-    console.log(item)
-      setSelectedItem(item); 
-      setShowModal(true);
+  const handleOpenProduct = (item: Item) => {
+    setSelectedItem(item); 
+    setShowProduct(true);
   };
 
-  const handleCloseModal = () => {
-      setSelectedItem(selectedItem); 
-      setShowModal(false);
+  const handleCloseProduct = () => {
+    setSelectedItem(selectedItem); 
+    setShowProduct(false);
   };
 
-  return { showModal, selectedItem, handleOpenModal, handleCloseModal };
+  return { showProduct, selectedItem, handleOpenProduct, handleCloseProduct };
 };

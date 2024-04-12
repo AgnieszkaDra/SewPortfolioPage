@@ -18,29 +18,25 @@
 
 .section {
     width: 100%;
-    padding: 0 60px;
     position: relative;
     &__nav {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
         margin: 20px 0;
-
-        &>* {
-            display: flex;
-            flex-direction: column;
-        }
+        margin-left: 20px;
 
         &__h5 {
             font-size: 14px;
-            color: #999999;
+            color: var(--color-light-grey);
         }
     }
 
     &__title {
         text-align: center;
+        color: var(--color-dark-grey);
     }
-
 }
 
 .open {
@@ -82,7 +78,7 @@
     &__content {
         display: grid;
         grid-template-rows: 200px 100px;
-        color: white;
+        color: var(--color-white);
 
         h2 {
             text-align: right;
@@ -106,7 +102,7 @@
         cursor: pointer;
 
         &:hover {
-            color: whitesmoke;
+            color: var(--color-smoke-white);
             font-size: 1.3rem;
         }
 
@@ -152,7 +148,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
-
+    padding: 20px;
     @media screen and (max-width: 767px) {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -177,7 +173,6 @@
             transform: scale(1.02);
         }
     }
-
 }
 
 .product {
@@ -189,16 +184,25 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-color: whitesmoke;
+        background-color: var(--color-smoke-white);
         justify-content: center;
         align-items: center;
-        color: $color-lightGrey;
+        color: var(--color-light-grey);
         &:hover {
             background-color: white;
         }
     }
-    &__title, &__price {
-        color: $color-lightGrey;  
+    &__caption {
+        padding-top: 1rem;
+    }
+    &__title {
+        color: var(--color-dark-grey);
+        margin-bottom: 5px;  
+    }
+    
+    &__price {
+        color: var(--color-light-grey); 
+        line-height: 25px; 
     }
 }
 
@@ -232,9 +236,8 @@
     height: 100%;
     left: 0;
     top: 0;
-   
     margin: 0 auto;
-    background: #fff;
+    background: var(--color-white);
     border: 3px solid pink;
     &__content {
         width: 900px;

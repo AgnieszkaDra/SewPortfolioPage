@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import products from '../../data/products.ts';
 import { ProductsContainerProps } from '../../interfaces.ts';
 import Product from './Product.tsx';
-import { useShowModal } from '../../hooks/useShowModal';
+import { useShowProduct } from '../../hooks/useShowModal';
 import styles from './Products.module.scss';
 
 const ProductsContainer: React.FC<ProductsContainerProps> = ({editable, categoryId, displayedCategorySettings }) => {
@@ -14,41 +14,32 @@ const ProductsContainer: React.FC<ProductsContainerProps> = ({editable, category
   };
 
   const [isLoaded, setIsLoaded] = useState(false);
-  const { showModal, selectedItem, handleOpenModal, handleCloseModal } = useShowModal();
+  const { showProduct, selectedItem, handleOpenProduct, handleCloseProduct } = useShowProduct();
  
   useEffect(() => {
     setIsLoaded(true); 
   }, []);
 
- 
-
   return (
     <section className={`${styles.section}`}>
       <h1 className={styles.section__title}>{matchedCategory?.name}</h1>
       <div className={styles.section__nav}>
-        <div>
-          <h5 className={styles.section__nav__h5} onClick={!editable ? onCloseCategory : () => {}}>
+        <h5 className={styles.section__nav__h5} onClick={!editable ? onCloseCategory : () => {}}>
           Strona główna /  {matchedCategory?.name} 
-          </h5>
-        </div>
-        <div>input</div>
+        </h5>
       </div>
       <ul className={`${styles.products} ${isLoaded ? styles.open : ''}`} >
         {matchedCategory?.items?.map((item, index) => (
-          <>
-          <Product key={index} index={index} item={item} onClick={() => handleOpenModal(item)}/>
-          </>
+         <Product key={index} index={index} item={item} onClick={() => handleOpenProduct(item)}/>
         ))}
       </ul>
-      {showModal && matchedCategory?.items?.map((item) => (
-          <dialog className={styles.modal}>
+      {showProduct && matchedCategory?.items?.map((item) => (
+        <div className={styles.modal}>
             <div className={styles.modal__content}>
             <div className={styles.modal__images} style={{backgroundImage: `url(${item.image})`}}>
-           
-          
-       </div>
+            </div>
         <div className={styles.modal__description}>
-          <div className={styles.close} onClick={handleCloseModal}>Zamknij</div>
+          <div className={styles.close} onClick={handleCloseProduct}>Zamknij</div>
           <h2>{ selectedItem?.title }</h2>
           <p>{ selectedItem?.price }</p>
           <div className={styles.list}>
@@ -61,9 +52,8 @@ const ProductsContainer: React.FC<ProductsContainerProps> = ({editable, category
         </div>
             </div>
        
-      </dialog>
-          
-        ))}
+        </div>
+      ))}
      
     </section>
   );

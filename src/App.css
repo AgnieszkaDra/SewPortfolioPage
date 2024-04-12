@@ -1,0 +1,19 @@
+:root {
+    /* colors */
+    --color-light-cake: #ffe5b2;
+    --color-dark-cake: #face90;
+ 
+    --color-green: #004b03;
+    --color-dark-green: #002902;
+ 
+    --color-gray: #d6d6d6;
+    --color-gray-light: #e8e8e8;
+    --color-gray-dark: #969696;
+ 
+    --color-gray-background: #f9f9f9;
+ 
+    --color-white: #ffffff;
+ 
+    /* effects */
+    --radius-button: 4px;
+ }

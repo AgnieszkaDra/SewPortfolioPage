@@ -1,3 +1,11 @@
+:root {
+  /* colors */
+  --color-smoke-white: #F5F5F5;
+  --color-white: #ffffff;
+  --color-light-grey: #999999;
+  --color-dark-grey: #282828;
+}
+
 @font-face {
   font-family: 'Jost';
   src: url('/path/to/your/font/Jost-Regular.woff2') format('woff2'),
