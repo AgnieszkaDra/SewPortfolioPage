@@ -173,23 +173,23 @@
             transform: scale(1.02);
         }
     }
-}
-
-.product {
-  
     &__actions {
-        position: absolute;
-        top: 5%;
-        right: 5%;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: var(--color-smoke-white);
-        justify-content: center;
-        align-items: center;
-        color: var(--color-light-grey);
-        &:hover {
-            background-color: white;
+        display: none;
+        &.visible{
+            display: flex;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-smoke-white);
+            justify-content: center;
+            align-items: center;
+            color: var(--color-light-grey);
+            &:hover {
+                background-color: var(--color-white);
+            }  
         }
     }
     &__caption {
@@ -199,12 +199,13 @@
         color: var(--color-dark-grey);
         margin-bottom: 5px;  
     }
-    
     &__price {
         color: var(--color-light-grey); 
         line-height: 25px; 
     }
 }
+
+
 
 @mixin transformStyle($rotate, $translateX, $translateY) {
     transform: rotate($rotate) translateX($translateX) translateY($translateY);
@@ -220,12 +221,7 @@
     font-size: 12px;
   }
 
-.actions {
-    display: none;
-    &.visible {
-        display: flex;
-    }
-}
+
 
 .modal {
     display: flex;

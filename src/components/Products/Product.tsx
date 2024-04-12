@@ -11,14 +11,14 @@ const Product: React.FC<ProductProps> = ({ index, item, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
-    <li key={index} 
+   <li key={index} 
         className={`${styles.products__product} ${styles.product}`} 
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <figure className={styles.product__image}>
+        <figure className={styles.products__image}>
           <div 
-            className={`${styles.product__actions} ${styles.actions} ${isHovered ? styles.visible : ''}`}
+            className={`${styles.products__actions} ${isHovered ? styles.visible : ''}`}
             onClick={() => onClick(item)}
           >
             <div className={`${styles.actions__view}`}>
@@ -26,18 +26,17 @@ const Product: React.FC<ProductProps> = ({ index, item, onClick }) => {
               <FontAwesomeIcon icon={faArrowRight} className={styles.arrowRight}/>
             </div>
           </div>
-            <img src={item.image} alt={`Image ${index}`} />
+          <img src={item.image} alt={`Image ${index}`} />
         </figure>
-        <div className={styles.product__caption}>
-          <div className={styles.product__title}>
+        <div className={styles.products__caption}>
+          <div className={styles.products__title}>
             <h3>{item.title}</h3>
           </div>
-          <div className={styles.product__price}>
-            <span>{item.price}zł </span>
+          <div className={styles.products__price}>
+          <span>{item.price}zł </span>
           </div>
         </div>
     </li>
   )}
   
-
 export default Product;
