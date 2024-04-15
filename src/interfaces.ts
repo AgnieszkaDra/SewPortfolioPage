@@ -38,7 +38,6 @@ export interface CategoryProps {
    id: string;
    items?: Item[];
    background?: string
-   editable: boolean;
    collection: Collection;
    displayedCategorySettings?: {
       setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
@@ -54,26 +53,10 @@ export interface Products {
 export interface ProductProps {
    index?: number;
    item: Item ;
-   onClick: (item: Item) => void;
+   // onClick: (item: Item) => void;
 }
  
-export interface CategoriesContainerProps {
-   displayedCategorySettings: {
-   setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
-   setSelectedCategoryId: React.Dispatch<React.SetStateAction<string | null>>;
-   };
-}
-
- export interface ProductsContainerProps {
-
-   displayedCategorySettings: {
-      setIsDisplayingCategory: React.Dispatch<React.SetStateAction<boolean>>;
-    };
-    categoryId: string | null;
-    editable: boolean;
-}
-
- export interface ProductData {
+export interface ProductData {
    images?: string[];
 
 }

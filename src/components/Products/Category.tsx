@@ -5,14 +5,12 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import styles from './Products.module.scss';
 
 
-const Category: React.FC<CategoryProps> = ({ name, id, editable, displayedCategorySettings,  background }) => {
 
-  const onOpenCategory = () => {
-    displayedCategorySettings?.setIsDisplayingCategory(true);
-    displayedCategorySettings?.setSelectedCategoryId(id);
- };
+const Category: React.FC<CategoryProps> = ({ name, background }) => {
 
- const style = {
+
+  
+  const style = {
   backgroundImage: `url(${background})`
   }
 
@@ -20,9 +18,9 @@ const Category: React.FC<CategoryProps> = ({ name, id, editable, displayedCatego
     <div 
     className={styles.category} 
     style={style}
-    onClick={!editable ? onOpenCategory : () => {}}
+   
     >
-      <div className={styles.category__content} >
+       <div className={styles.category__content} >
         <h2 className={styles.category__name}>{name}</h2> 
           <a className={styles.category__link}>
           <span className={styles.category__span}>Zobacz produkty</span>
@@ -31,7 +29,7 @@ const Category: React.FC<CategoryProps> = ({ name, id, editable, displayedCatego
           </div>
           </a>
       </div>
-     </div>
+    </div>
   );
 };
 

@@ -1,5 +1,3 @@
-@import '../../styleVariables/index';
-
 @font-face {
     font-family: 'Jost';
     src: url('/path/to/your/font/Jost-Regular.woff2') format('woff2'),
@@ -27,9 +25,10 @@
         margin: 20px 0;
         margin-left: 20px;
 
-        &__h5 {
+        &__link {
             font-size: 14px;
             color: var(--color-light-grey);
+            text-decoration: none;
         }
     }
 
@@ -74,6 +73,7 @@
     background-repeat: no-repeat;
     background-position: center;
     filter: grayscale(80%);
+    border: 3px solid red;
 
     &__content {
         display: grid;
