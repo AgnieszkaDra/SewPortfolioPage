@@ -6,8 +6,13 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Products.module.scss';
 
-const Product: React.FC<ProductProps> = ({ index, item }) => {
+const Product: React.FC<ProductProps> = ({ index, item, editable, onClick,  displayedCategorySettings, }) => {
 const [isHovered, setIsHovered] = useState(false);
+
+const onOpenCategory = () => {
+  displayedCategorySettings?.setIsDisplayingCategory(true);
+  displayedCategorySettings?.setSelectedCategoryId(id);
+};
 
   return (
     <section  className={`${styles.products__product} ${styles.product}`}>
@@ -15,11 +20,12 @@ const [isHovered, setIsHovered] = useState(false);
         className={`${styles.products__product} ${styles.product}`} 
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={() => onClick(item)}
       >
         <figure className={styles.products__image}>
           <div 
             className={`${styles.products__actions} ${isHovered ? styles.visible : ''}`}
-            // onClick={() => onClick(item)}
+            onClick={() => onClick(item)}
           >
             <div className={`${styles.actions__view}`}>
               <FontAwesomeIcon icon={faArrowLeft} className={styles.arrowLeft} />
