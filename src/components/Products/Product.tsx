@@ -15,7 +15,7 @@ const onOpenCategory = () => {
 };
 
   return (
-    <section  className={`${styles.products__product} ${styles.product}`}>
+
       <li key={index} 
         className={`${styles.products__product} ${styles.product}`} 
         onMouseEnter={() => setIsHovered(true)}
@@ -25,7 +25,7 @@ const onOpenCategory = () => {
         <figure className={styles.products__image}>
           <div 
             className={`${styles.products__actions} ${isHovered ? styles.visible : ''}`}
-            onClick={() => onClick(item)}
+            // onClick={() => onClick(item)}
           >
             <div className={`${styles.actions__view}`}>
               <FontAwesomeIcon icon={faArrowLeft} className={styles.arrowLeft} />
@@ -43,7 +43,7 @@ const onOpenCategory = () => {
           </div>
         </div>
       </li>
-    </section>
+  
   );
 };
 

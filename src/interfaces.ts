@@ -54,11 +54,12 @@ export interface ProductProps {
    index?: number;
    item: Item ;
    editable: boolean;
+   onClick: (item: Item) => void;
    displayedProductSettings?: {
       setIsDisplayingProduct: React.Dispatch<React.SetStateAction<boolean>>;
       setSelectedProductId: React.Dispatch<React.SetStateAction<string | null>>;
    };
-   // onClick: (item: Item) => void;
+   
 }
  
 export interface ProductData {

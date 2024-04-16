@@ -51,27 +51,24 @@ const ProductsContainer: React.FC<ProductsContainerProps> = () => {
           />
         ))}
       </ul>
-      {showProduct && product?.items?.map((item) => (
-        <div className={styles.modal}>
-            <div className={styles.modal__content}>
-            <div className={styles.modal__images} style={{backgroundImage: `url(${item.image})`}}>
-            </div>
-        <div className={styles.modal__description}>
-          <div className={styles.close} onClick={handleCloseProduct}>Zamknij</div>
-          <h2>{ selectedItem?.title }</h2>
-          <p>{ selectedItem?.price }</p>
-          <div className={styles.list}>
-            <ul>
-              {selectedItem?.features?.map((feature: string, index: number) => (
-                <li key={index}>{feature}</li>
-               ))}
-            </ul>
-          </div>
+      {showProduct && selectedItem && (
+  <div className={styles.modal}>
+    <div className={styles.modal__content}>
+      <div className={styles.modal__images} style={{backgroundImage: `url(${selectedItem.image})`}}>
+      </div>
+      <div className={styles.modal__description}>
+        <div className={styles.close} onClick={handleCloseProduct}>Zamknij</div>
+        <h2>{selectedItem.title}</h2>
+        <p>{selectedItem.price}</p>
+        <div className={styles.list}>
+          <ul>
+            <li>{selectedItem.feature}</li>
+          </ul> 
         </div>
-            </div>
-       
-        </div>
-      ))}
+      </div>
+    </div>
+  </div>
+)}
     </section>
   );
 };
