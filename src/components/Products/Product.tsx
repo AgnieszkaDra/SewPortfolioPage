@@ -6,13 +6,9 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Products.module.scss';
 
-const Product: React.FC<ProductProps> = ({ index, item, editable, onClick,  displayedCategorySettings, }) => {
+const Product: React.FC<ProductProps> = ({ index, item, onClick }) => {
 const [isHovered, setIsHovered] = useState(false);
 
-const onOpenCategory = () => {
-  displayedCategorySettings?.setIsDisplayingCategory(true);
-  displayedCategorySettings?.setSelectedCategoryId(id);
-};
 
   return (
 

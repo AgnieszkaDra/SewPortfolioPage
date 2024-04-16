@@ -54,7 +54,7 @@ export const products: Products = {
           }
         ],
         background: basicBackground,
-        editable: false,
+      
         collection: Collection.BASIC
       },
       {
@@ -73,21 +73,21 @@ export const products: Products = {
           },
         ],
         background: mothChildBackground,
-        editable: false,
+    
         collection: Collection.MOTHER__AND__CHILD
       },
       {
         name: 'Akcesoria',
         id: uuidv4(),
         background: accessoriesBackground,
-        editable: false,
+     
         collection: Collection.ACCESSORIES
       },
       {
         name: 'Spódnice',
         id: uuidv4(),
         background: skirtsBackground,
-        editable: false,
+      
         collection: Collection.SKIRTS
       },
     ]

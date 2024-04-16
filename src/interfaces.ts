@@ -48,7 +48,7 @@ export interface CategoryProps {
 
 export interface Products {
    categories: CategoryProps[];
- }
+}
 
 export interface ProductProps {
    index?: number;
@@ -57,7 +57,6 @@ export interface ProductProps {
    onClick: (item: Item) => void;
    displayedProductSettings?: {
       setIsDisplayingProduct: React.Dispatch<React.SetStateAction<boolean>>;
-      setSelectedProductId: React.Dispatch<React.SetStateAction<string | null>>;
    };
    
 }
