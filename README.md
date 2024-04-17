@@ -10,7 +10,7 @@ Sew Portfolio Page is a project written with React and TypeScript(to practise it
 [![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)] [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)]
 
 🖥 **Features**
-- **No subpages**: In this project, product categories are presented without navigating to subpages.
+- **No subpages**:  In this project, features of product are presented without navigating to subpages.
 
 # React + TypeScript + Vite
 
