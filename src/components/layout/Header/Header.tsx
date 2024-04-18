@@ -1,8 +1,8 @@
 import { useState }  from 'react';
 
 import Navigation from '../../Navigation/Navigation';
-// import Carousel from '../Carousel/Carousel';
-// import carousel from '../../data/carousel';
+import Carousel from '../../Carousel/Carousel';
+import carousel from '../../../data/carousel';
 import styles from './Header.module.scss';
 
 
@@ -23,7 +23,7 @@ const Header  = () => {
       </div> 
       <Navigation isNavbarOpen={navbarOpen}></Navigation>
       </div>
-     {/* <Carousel images={carousel}></Carousel>    */}
+        <Carousel images={carousel}></Carousel>
     </header>
     
   );

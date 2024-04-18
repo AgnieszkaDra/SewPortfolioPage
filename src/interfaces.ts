@@ -67,3 +67,8 @@ export interface ProductData {
    images?: string[];
 
 }
+
+export interface CarouselProps {
+   images: Image[];
+   interval: number
+}
