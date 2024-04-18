@@ -5,11 +5,13 @@ export interface HeaderProps {
 }
 
 
-
 export interface Image {
    image: string;
    href: string
+}
 
+export interface NavigationProps {
+   isNavbarOpen: boolean
 }
 
 export interface CarouselProps {
