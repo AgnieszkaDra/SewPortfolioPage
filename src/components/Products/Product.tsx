@@ -28,7 +28,7 @@ const [isHovered, setIsHovered] = useState(false);
               <FontAwesomeIcon icon={faArrowRight} className={styles.arrowRight}/>
             </div>
           </div>
-          <img src={item.image} alt={`Image ${index}`} /> 
+          <img src={item.imageBackground} alt={`Image ${index}`} /> 
         </figure>
         <div className={styles.products__caption}>
           <div className={styles.products__title}>

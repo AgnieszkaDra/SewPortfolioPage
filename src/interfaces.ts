@@ -6,8 +6,9 @@ export interface HeaderProps {
 
 
 export interface Image {
-   image: string;
-   href: string
+   text: string,
+   href: string,
+   image: string
 }
 
 export interface NavigationProps {
@@ -25,7 +26,8 @@ export interface NavigationProps {
 
 export interface Item {
    title?: string;
-   image?: string; 
+   imageBackground?: string;
+   imagesCarousel?: string[];
    price?: number;
    index?: number;
    features?: string[];
@@ -37,6 +39,7 @@ export interface Feature {
 
 export interface CategoryProps {
    name: string;
+   category: string,
    id: string;
    items?: Item[];
    background?: string

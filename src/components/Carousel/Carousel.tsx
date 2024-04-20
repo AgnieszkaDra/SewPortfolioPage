@@ -56,7 +56,7 @@ return (
                     href={`${images[currentSlide]?.href}`}
                     className={`${styles.banner__link} `}
                 >
-                    Zobacz
+                    {`${images[currentSlide]?.text}`}
                 </a>
             </div>
             </div>

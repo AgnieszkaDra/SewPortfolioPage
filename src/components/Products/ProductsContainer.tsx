@@ -54,7 +54,7 @@ const ProductsContainer = () => {
       {showProduct && selectedItem && (
   <div className={styles.modal}>
     <div className={styles.modal__content}>
-      <div className={styles.modal__images} style={{backgroundImage: `url(${selectedItem.image})`}}>
+      <div className={styles.modal__images} style={{backgroundImage: `url(${selectedItem.imageBackground})`}}>
       </div>
       <div className={styles.modal__description}>
         <div className={styles.close} onClick={handleCloseProduct}>Zamknij</div>
