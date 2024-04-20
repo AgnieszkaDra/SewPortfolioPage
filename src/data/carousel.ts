@@ -1,21 +1,16 @@
-import logo from '../assets/logo.jpg'
-import rabbit from '../assets/AreaOfChild/Blouses/Rabbit/rabbit.1b.jpg'
-import rabbit2 from '../assets/AreaOfChild/Blouses/Rabbit/rabbit.1a.jpg'
+import logodziecko from '../assets/logo/logo-dziecko.jpg'
+import logomama from '../assets/logo/logo-mama.jpg'
+
 
 export const carousel = [
        {
-        image: logo,
+        image: logodziecko,
         id:0
       },
        {
-        image: rabbit,
+        image: logomama,
         href: '#section-children',
         id:1,
-      },
-      {
-        image: rabbit2,
-        href: '#section-women',
-        id:2,
       },
     ]
   
