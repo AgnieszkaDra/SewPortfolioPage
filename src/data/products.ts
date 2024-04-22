@@ -194,7 +194,7 @@ export const products: Products = {
         name: 'Spodnie',
         category: 'Child',
         id: uuidv4(),
-        background: skirtsBackground,
+        background: trousersWithRabbit1a,
         items: [
           {
             title: 'Spodnie Violet',
@@ -206,6 +206,42 @@ export const products: Products = {
             title: 'Spodnie Rabbit',
             imageBackground: trousersWithRabbit1a,
             imagesCarousel: [trousersWithRabbit1a, trousersWithRabbit1b, trousersWithRabbit1c],
+            price: 90
+          },
+          {
+            title: 'Spodnie Bear',
+            imageBackground: trousers1a,
+            imagesCarousel: [trousers1a],
+            price: 90
+          },
+          {
+            title: 'Spodnie Flowers',
+            imageBackground: trousers1b,
+            imagesCarousel: [trousers1b],
+            price: 90
+          },
+          {
+            title: 'Spodnie Strips',
+            imageBackground: trousers1c,
+            imagesCarousel: [trousers1c],
+            price: 90
+          },
+          {
+            title: 'Spodnie Strips',
+            imageBackground: trousers1d,
+            imagesCarousel: [trousers1d],
+            price: 90
+          },
+          {
+            title: 'Spodnie Strips',
+            imageBackground: trousers1e,
+            imagesCarousel: [trousers1e],
+            price: 90
+          },
+          {
+            title: 'Spodnie Skateboards',
+            imageBackground: trousers1f,
+            imagesCarousel: [trousers1f],
             price: 90
           },
         
