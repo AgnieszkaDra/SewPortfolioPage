@@ -7,9 +7,6 @@ import styles from './Products.module.scss';
 
 
 const Category: React.FC<CategoryProps> = ({ name, background }) => {
-
-
-  
   const style = {
   backgroundImage: `url(${background})`
   }
