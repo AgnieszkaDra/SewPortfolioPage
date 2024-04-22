@@ -5,13 +5,12 @@ import logomama from '../assets/logo/logo-mama.jpg'
 export const carousel = [
        {
         image: logodziecko,
-        text: 'Strefa dziecka',
+        name: 'Dziecko',
         id:0
       },
        {
         image: logomama,
-        text: 'Strefa kobiet',
-        href: '#section-children',
+        name: 'Kobieta',
         id:1,
       },
     ]
