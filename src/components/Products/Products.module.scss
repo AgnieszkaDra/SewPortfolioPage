@@ -56,13 +56,16 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
+    margin: 50px;
 
     @media screen and (max-width: 767px) {
         grid-template-columns: repeat(2, 1fr);
+        margin: 20px;
     }
 
     @media screen and (max-width: 575px) {
         grid-template-columns: 1fr;
+        margin: 10px;
     }
 }
 
