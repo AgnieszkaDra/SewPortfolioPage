@@ -1,17 +1,20 @@
 import logodziecko from '../assets/logo/logo-dziecko.jpg'
 import logomama from '../assets/logo/logo-mama.jpg'
+import { Image } from '../interfaces' 
+  
 
 
-export const carousel = [
+
+export const carousel: Image[] = [
        {
         image: logodziecko,
         name: 'Dziecko',
-        id:0
+        href: ''
       },
        {
         image: logomama,
         name: 'Kobieta',
-        id:1,
+        href: ''
       },
     ]
   

@@ -13,8 +13,6 @@ const ProductsContainer = () => {
 
   const product = products.categories.find(category => category.name === categoryName);
 
- 
- 
   const [isLoaded, setIsLoaded] = useState(false);
 
   const [isDisplayingProduct, setIsDisplayingProduct] = useState(false);

@@ -15,10 +15,10 @@ export interface NavigationProps {
    isNavbarOpen: boolean
 }
 
-export interface CarouselProps {
-   images: Image[];
-   interval: number
-}
+// export interface CarouselProps {
+//    images: Image[];
+//    interval: number
+// }
 
 export interface NavigationProps {
    isNavbarOpen: boolean
@@ -73,5 +73,5 @@ export interface ProductData {
 
 export interface CarouselProps {
    images: Image[];
-   interval: number
+   interval?: number
 }
