@@ -6,7 +6,7 @@ export interface HeaderProps {
 
 
 export interface Image {
-   text: string,
+   name: string,
    href: string,
    image: string
 }
