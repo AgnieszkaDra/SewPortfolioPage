@@ -16,7 +16,7 @@ const CarouselWrapper = styled.div`
     align-items: center;
 `;
 
-const CarouselButton = styled.button`
+const ButtonWrapper = styled.div`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -67,11 +67,11 @@ return (
     <CarouselWrapper>
         {images && images.length > 1 && (
             <>
-            <CarouselButton>
-                <Button variant="darkGrey" size='24px' onClick={goToPrevSlide} style={{ left: '10px' }}>
+            <ButtonWrapper style={{ left: '10px' }}>
+                <Button variant="darkGrey" size='24px' onClick={goToPrevSlide} >
                     &lt;
                 </Button>   
-            </CarouselButton>
+            </ButtonWrapper>
              <div 
                 role={'image'} 
                 aria-label={'main-carousel-image'} 
