@@ -1,4 +1,4 @@
-import { NavigationProps } from '../../interfaces';
+import { NavigationProps } from '../../../interfaces';
 import styles from './Navigation.module.scss';
 
 

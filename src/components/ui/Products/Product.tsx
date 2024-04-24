@@ -1,10 +1,10 @@
 import React, { useState }  from 'react';
-import { ProductProps } from '../../interfaces';
+import { ProductProps } from '../../../interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import styles from './Products.module.scss';
+import styles from '../../Products/Products.module.scss'
 
 const Product: React.FC<ProductProps> = ({ index, item, onClick }) => {
 const [isHovered, setIsHovered] = useState(false);

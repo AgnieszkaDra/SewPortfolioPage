@@ -1,8 +1,8 @@
 import React  from 'react';
-import { CategoryProps } from '../../interfaces';
+import { CategoryProps } from '../../../interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import styles from './Products.module.scss';
+import styles from '../../Products/Products.module.scss'
 
 
 

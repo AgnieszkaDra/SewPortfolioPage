@@ -49,17 +49,27 @@ import trousersViolet1b from '../assets/AreaOfChild/Trousers/trousersViolet.1b.j
 import trousersWithRabbit1a from '../assets/AreaOfChild/Trousers/trousersWithRabbit.1a.jpg'
 import trousersWithRabbit1b from '../assets/AreaOfChild/Trousers/trousersWithRabbit.1b.jpg'
 import trousersWithRabbit1c from '../assets/AreaOfChild/Trousers/trousersWithRabbit.1c.jpg'
-
+import band1 from '../assets/areaOfWomen/Accessories/Banding/1.jpg'
+import band2 from '../assets/areaOfWomen/Accessories/Banding/2.jpg'
+import completBand1 from '../assets/areaOfWomen/Accessories/Complets/1.jpg'
+import completBand2 from '../assets/areaOfWomen/Accessories/Complets/2.jpg'
+import cap1a from '../assets/AreaOfChild/Accessories/cap.1a.jpg'
+import cap1b from '../assets/AreaOfChild/Accessories/cap.1b.jpg'
+import cap2a from '../assets/AreaOfChild/Accessories/cap.2a.jpg'
+import cap2b from '../assets/AreaOfChild/Accessories/cap.2b.jpg'
+import cap2c from '../assets/AreaOfChild/Accessories/cap.2c.jpg'
+import forestBag1a from '../assets/AreaOfChild/Accessories/forest-bag.1a.jpg'
+import forestBag1b from '../assets/AreaOfChild/Accessories/forest-bag.1b.jpg'
+import forestBag1c from '../assets/AreaOfChild/Accessories/forest-bag.1c.jpg'
 // import basic1 from '../assets/basics/basic1.jpg'
 // import basic2 from '../assets/basics/basic2.jpg'
 // import basic3 from '../assets/basics/basic3.jpg'
 // import basic4 from '../assets/basics/basic4.jpg'
 // import basic5 from '../assets/basics/basic5.jpg'
 import basicBackground from '../assets/basics/basicBackground.jpg'
-import mothChild1 from '../assets/motherAndChild/mothChild1.jpg'
-import mothChild2 from '../assets/motherAndChild/mothChild2.jpg'
+
 import accessoriesBackground from '../assets/accessories/accessoriesBackground.jpg'
-import mothChildBackground from '../assets/motherAndChild/mothChildBackground.jpg'
+
 import skirtsBackground from '../assets/skirts/skirtsBackground.jpg'
 
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200 , SKIRTS = 300 }
@@ -76,6 +86,7 @@ export const products: Products = {
             imageBackground: ball1a,
             imagesCarousel: [ball1a, ball1b],
             price: 100,
+            collection: 'CHILD',
             // features:  [
             //   { description: 'bluza wykonana z bawełny', /* other properties */ },
             // { description: 'lużny krój', /* other properties */ },
@@ -87,29 +98,32 @@ export const products: Products = {
             title: 'Bluza Rabbit',
             imageBackground: rabbit1a,
             imagesCarousel: [rabbit1a, rabbit1b, rabbit1c,  rabbit1d, rabbit1e, rabbit1f, rabbit2a, rabbit2b, rabbit2c],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Bluza Skateboard',
             imageBackground: skateboards1a,
             imagesCarousel: [skateboards1a, skateboards1b, skateboards1c,  skateboards1d, skateboards1e ],
-            price: 150
+            price: 150,
+            collection: 'CHILD'
           },
           {
             title: 'Bluza Violet',
             imageBackground: violet1a,
             imagesCarousel: [violet1a, violet1b, violet1c],
-            price: 65
+            price: 65,
+            collection: 'CHILD'
           },
           {
             title: 'Bluza Wolf',
             imageBackground: wolf1a,
             imagesCarousel: [wolf1a, wolf1b, wolf1c, wolf1d],
-            price: 78
+            price: 78,
+            collection: 'CHILD'
           }
         ],
         background: basicBackground,
-      
         collection: Collection.BASIC
       },
       {
@@ -123,74 +137,49 @@ export const products: Products = {
             imageBackground: violetComplet1a,
             imagesCarousel: [violetComplet1a, violetComplet1b, violetComplet1c],
             price: 100,
-        },
-        {
-          title: 'Komplet Whale',
-          imageBackground: whale1a,
-          imagesCarousel: [whale1a, whale1b, whale1c, whale1d],
-          price: 100,
-      },
+            collection: 'CHILD'
+          },
+          {
+            title: 'Komplet Whale',
+            imageBackground: whale1a,
+            imagesCarousel: [whale1a, whale1b, whale1c, whale1d],
+            price: 100,
+            collection: 'CHILD'
+          },
         ],
         collection: Collection.BASIC
-
       },
       {
-        name: 'Mama i Ja',
-        category: 'Child',
-        id: uuidv4(),
-        items: [
-          {
-            title: 'skirt1',
-            imageBackground: mothChild1,
-            price: 100
-          },
-          {
-            title: 'skirt2',
-            imageBackground: mothChild2,
-            price: 90
-          },
-        ],
-        background: mothChildBackground,
-    
-        collection: Collection.MOTHER__AND__CHILD
-      },
-      {
-        name: 'Akcesoria',
-        category: 'Child',
-        id: uuidv4(),
-        background: accessoriesBackground,
-        collection: Collection.ACCESSORIES
-      },
-      {
-        name: 'Spódnice',
+        name: 'Spódnice i Sukienki',
         category: 'Child',
         id: uuidv4(),
         background: skirtsBackground,
         items: [
           {
             title: 'Spódnica Cherry',
-            imageBackground: cherry1a,
+            imageBackground: cherry1b,
             imagesCarousel: [cherry1a, cherry1b, cherry1c],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Spódnica Fairy',
             imageBackground: fairy1a,
             imagesCarousel: [fairy1a, fairy1b],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Spódnica Hearts',
             imageBackground: hearts1a,
             imagesCarousel: [hearts1a, hearts1b, hearts1c],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
-
         ],
-      
         collection: Collection.SKIRTS
       },
-      {
+       {
         name: 'Spodnie',
         category: 'Child',
         id: uuidv4(),
@@ -200,55 +189,104 @@ export const products: Products = {
             title: 'Spodnie Violet',
             imageBackground: trousersViolet1a,
             imagesCarousel: [trousersViolet1a, trousersViolet1b],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Spodnie Rabbit',
             imageBackground: trousersWithRabbit1a,
             imagesCarousel: [trousersWithRabbit1a, trousersWithRabbit1b, trousersWithRabbit1c],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Spodnie Bear',
             imageBackground: trousers1a,
             imagesCarousel: [trousers1a],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Spodnie Flowers',
             imageBackground: trousers1b,
             imagesCarousel: [trousers1b],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Spodnie Strips',
             imageBackground: trousers1c,
             imagesCarousel: [trousers1c],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Spodnie Strips',
             imageBackground: trousers1d,
             imagesCarousel: [trousers1d],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Spodnie Strips',
             imageBackground: trousers1e,
             imagesCarousel: [trousers1e],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
           {
             title: 'Spodnie Skateboards',
             imageBackground: trousers1f,
             imagesCarousel: [trousers1f],
-            price: 90
+            price: 90,
+            collection: 'CHILD'
           },
-        
-
         ],
-      
-        collection: Collection.SKIRTS
+        collection: Collection.BASIC
+      },
+      {
+        name: 'Akcesoria',
+        category: 'Child',
+        id: uuidv4(),
+        background: accessoriesBackground,
+        items: [
+          {
+            title: 'Komplet Bear',
+            imageBackground: cap1a,
+            imagesCarousel: [cap1a, cap1b],
+            price: 100,
+            collection: 'CHILD'
+          },
+          {
+            title: 'Czapka Bear',
+            imageBackground: cap2a,
+            imagesCarousel: [cap2a, cap2b, cap2c],
+            price: 120,
+            collection: 'CHILD'
+          },
+          {
+            title: 'Worek Szkolny Forest',
+            imageBackground: forestBag1a,
+            imagesCarousel: [forestBag1a, forestBag1b, forestBag1c],
+            price: 50,
+            collection: 'CHILD'
+          }, 
+          {
+            title: 'Opaski Color',
+            imageBackground: band1,
+            imagesCarousel: [band1, band2],
+            price: 60,
+            collection: 'WOMAN'
+          },
+          {
+            title: 'Komplet Winter',
+            imageBackground: completBand1,
+            imagesCarousel: [completBand1, completBand2],
+            price: 90,
+            collection: 'WOMAN'
+          },
+        ],
+        collection: Collection.ACCESSORIES
       },
     ]
   }

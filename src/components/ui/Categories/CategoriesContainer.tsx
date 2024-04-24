@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import styles from './Products.module.scss';
+import styles from '../../Products/Products.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-import products from '../../data/products.ts';
+import products from '../../../data/products.ts';
 
 const CategoriesContainer = () => {
  

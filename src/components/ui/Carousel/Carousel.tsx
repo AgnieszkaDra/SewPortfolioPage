@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { CarouselProps } from '../../interfaces';
+import { CarouselProps } from '../../../interfaces';
 import styles from './Carousel.module.scss';
 
 const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {

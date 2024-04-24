@@ -1,11 +1,11 @@
 import  { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-import products from '../../data/products.ts';
+import products from '../../../data/products.ts';
 
 import Product from './Product.tsx';
-import styles from './Products.module.scss';
-import { useShowProduct } from '../../hooks/useShowModal';
+import styles from '../../Products/Products.module.scss'
+import { useShowProduct } from '../../../hooks/useShowModal.tsx';
 
 const ProductsContainer = () => {
   

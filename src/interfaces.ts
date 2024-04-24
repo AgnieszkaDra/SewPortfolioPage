@@ -31,6 +31,7 @@ export interface Item {
    price?: number;
    index?: number;
    features?: string[];
+   collection: string
 }
 
 export interface Feature {

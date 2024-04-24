@@ -1,5 +1,5 @@
 
-import CategoriesContainer from '../../Products/CategoriesContainer';
+import CategoriesContainer from "../../ui/Categories/CategoriesContainer";
 
 
 const Main  = () => {

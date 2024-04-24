@@ -1,7 +1,6 @@
 import { useState }  from 'react';
-
-import Navigation from '../../Navigation/Navigation';
-import Carousel from '../../Carousel/Carousel';
+import Navigation from '../../ui/Navigation/Navigation';
+import Carousel from '../../ui/Carousel/Carousel';
 import carousel from '../../../data/carousel';
 import styles from './Header.module.scss';
 

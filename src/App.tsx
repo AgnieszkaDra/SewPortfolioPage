@@ -1,7 +1,7 @@
 import Home from './components/layout/SharedLayout/SharedLayout.tsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import CategoriesContainer from './components/Products/CategoriesContainer.tsx';
-import ProductsContainer from './components/Products/ProductsContainer.tsx';
+import CategoriesContainer from './components/ui/Categories/CategoriesContainer.tsx';
+import ProductsContainer from './components/ui/Products/ProductsContainer.tsx';
 import Main from './components/layout/Main/Main.tsx';
 
 const App = () => {
