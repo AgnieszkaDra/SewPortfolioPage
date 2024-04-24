@@ -1,5 +1,5 @@
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200, SKIRTS = 300 }
-
+import { CSSProperties } from 'react';
 export interface HeaderProps {
    logo: string
 }
@@ -76,3 +76,37 @@ export interface CarouselProps {
    images: Image[];
    interval?: number
 }
+
+export interface ButtonProps {
+   children: React.ReactNode;
+   variant?: keyof Theme['colors']
+   size?: string;
+   type?: 'button' | 'submit' | 'reset'; 
+   style?: CSSProperties;// Specify the allowed variant values here
+   onClick?: () => void; // onClick should be a function that takes no arguments and returns void
+ }
+
+ export interface Theme {
+	colors: {
+	white: string;
+	smokeWhite: string;
+	lightGrey: string;
+	darkGrey: string;
+	};
+	fontSize: {
+	small: string;
+	medium: string;
+	large: string;
+	extraLarge: string;
+	};
+	padding: {
+	small: string;
+	medium: string;
+	large: string;
+	};
+	spacing: {
+	small: string;
+	medium: string;
+	large: string;
+	};
+  }
