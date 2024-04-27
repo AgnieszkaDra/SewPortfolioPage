@@ -1,4 +1,5 @@
 import { darken } from 'polished';
+import { lighten } from 'polished';
 
 const theme = {
 	colors: {
@@ -8,7 +9,8 @@ const theme = {
 		darkGrey: '#282828',
 		choco: '#e3d9c4',
 		chocoDarken: darken(0.02, '#e3d9c4'),
-		text: '#2a2b47'
+		text: '#2a2b47',
+		textLighten: lighten(0.02, '#2a2b47' )
 	},
 	fontSize: {
 		small: '0.75rem',
@@ -19,7 +21,7 @@ const theme = {
 	padding: {
 		small: '0.5rem 1rem',
 		medium: '0.75rem 1.5rem',
-		large: '1rem 2rem',
+		large: '1.5rem',
 	},
 	spacing: {
 		small: '0.5rem',

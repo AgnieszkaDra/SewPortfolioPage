@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { CarouselProps } from '../../../interfaces';
 import Button from '../Button/Button';
 import styled from 'styled-components';
-import styles from './Carousel.module.scss';
-
 
 const CarouselWrapper = styled.div`
     position: relative;
@@ -14,6 +12,9 @@ const CarouselWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
 `;
 
 const ButtonWrapper = styled.div`
@@ -26,6 +27,33 @@ const ButtonWrapper = styled.div`
     cursor: pointer;
     padding: 10px;
 `;
+
+const LinkWrapper = styled.div<{ isAnimating?: boolean }>`
+    @keyframes slideUp {
+        from {
+            transform: translate(-100%, -50%);
+        }
+
+        to {
+            transform: translate(-50%, -50%);
+        }
+    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    ${({ isAnimating }) => isAnimating && `
+        animation: slideUp 2s ease forwards;
+    `}
+    `;
+
+const StyledLink = styled(Link)`
+    background-color: ${({ theme }) => theme.colors.smokeWhite};
+    color: ${({ theme }) => theme.colors.textLighten};
+    padding: ${({ theme }) => theme.padding.large};
+    color: $color-font-lightBlack;
+    text-decoration: none;
+  `;
 
 
 const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {
@@ -63,41 +91,32 @@ const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {
 
  
 return (
-
-    <CarouselWrapper>
+    <CarouselWrapper  
+        style={{ backgroundImage: `url(${images[currentSlide]?.image})`}}
+        role={'image'} 
+        aria-label={'main-carousel-image'} 
+    >
         {images && images.length > 1 && (
             <>
-            <ButtonWrapper style={{ left: '10px' }}>
-                <Button size='24px' onClick={goToPrevSlide} >
-                    &lt;
-                </Button>   
-            </ButtonWrapper>
-             <div 
-                role={'image'} 
-                aria-label={'main-carousel-image'} 
-                style={{ backgroundImage: `url(${images[currentSlide]?.image})`}}
-                className={styles.image}
-            >
-            <div className={`${styles.banner} ${isAnimating && styles.animation}`}>
-              <Link 
-                to={`/category/${images[currentSlide]?.name}`} 
-                className={`${styles.banner__link} `}
-              >
-                {`${images[currentSlide]?.name}`}
-              </Link>
-            </div>
-            </div>
-            <ButtonWrapper style={{ right: '10px' }}>
-                <Button size='24px' onClick={goToNextSlide} >
-                &gt;
-                </Button>   
-            </ButtonWrapper>
+                <ButtonWrapper style={{ left: '10px' }}>
+                    <Button size='24px' onClick={goToPrevSlide} >
+                        &lt;
+                    </Button>   
+                </ButtonWrapper>
+                    <LinkWrapper isAnimating={isAnimating}>
+                        <StyledLink to={`/category/${images[currentSlide]?.name}`}>
+                            {images[currentSlide]?.name}
+                        </StyledLink>
+                    </LinkWrapper>
+                <ButtonWrapper style={{ right: '10px' }}>
+                    <Button size='24px' onClick={goToNextSlide} >
+                        &gt;
+                    </Button>   
+                </ButtonWrapper>
             </>
         )}
 
     </CarouselWrapper>
-           
-
     );
 }
 
