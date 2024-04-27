@@ -10,7 +10,6 @@ const rootElement = document.getElementById('root');
     <React.StrictMode>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-      
         <App />
       </ThemeProvider>
     </React.StrictMode>,

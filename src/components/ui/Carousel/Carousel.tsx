@@ -68,7 +68,7 @@ return (
         {images && images.length > 1 && (
             <>
             <ButtonWrapper style={{ left: '10px' }}>
-                <Button variant="darkGrey" size='24px' onClick={goToPrevSlide} >
+                <Button size='24px' onClick={goToPrevSlide} >
                     &lt;
                 </Button>   
             </ButtonWrapper>
@@ -79,13 +79,7 @@ return (
                 className={styles.image}
             >
             <div className={`${styles.banner} ${isAnimating && styles.animation}`}>
-                {/* <a 
-                    href={`${images[currentSlide]?.href}`}
-                    className={`${styles.banner__link} `}
-                >
-                    {`${images[currentSlide]?.text}`}
-                </a> */}
-                 <Link 
+              <Link 
                 to={`/category/${images[currentSlide]?.name}`} 
                 className={`${styles.banner__link} `}
               >
@@ -93,14 +87,12 @@ return (
               </Link>
             </div>
             </div>
-              <button className={`${styles.arrow} ${styles.next}`} onClick={goToNextSlide} type='button'>
-                    &gt;
-                </button>
+            <ButtonWrapper style={{ right: '10px' }}>
+                <Button size='24px' onClick={goToNextSlide} >
+                &gt;
+                </Button>   
+            </ButtonWrapper>
             </>
-            
-            // <button className={`${styles.arrow} ${styles.prev}`} onClick={goToPrevSlide} type='button'>
-            //     &lt;
-            // </button>
         )}
 
     </CarouselWrapper>

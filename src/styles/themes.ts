@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 
 const theme = {
 	colors: {
@@ -5,6 +6,9 @@ const theme = {
 		smokeWhite: '#F5F5F5',
 		lightGrey: '#999999',
 		darkGrey: '#282828',
+		choco: '#e3d9c4',
+		chocoDarken: darken(0.02, '#e3d9c4'),
+		text: '#2a2b47'
 	},
 	fontSize: {
 		small: '0.75rem',

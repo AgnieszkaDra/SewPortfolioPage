@@ -79,7 +79,7 @@ export interface CarouselProps {
 
 export interface ButtonProps {
    children: React.ReactNode;
-   variant?: keyof Theme['colors']
+   variant?: string
    size?: string;
    type?: 'button' | 'submit' | 'reset'; 
    style?: CSSProperties;// Specify the allowed variant values here
