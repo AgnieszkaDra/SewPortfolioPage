@@ -1,9 +1,10 @@
-import { useState }  from 'react';
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import Navigation from '../../ui/Navigation/Navigation';
 import Carousel from '../../ui/Carousel/Carousel';
 import carousel from '../../../data/carousel';
+import { useToggleNavbar } from '../../../hooks/useNavbar';
 import styled from 'styled-components';
 
 const HamburgerWrapper = styled.div<{ navbarOpen: boolean }>`
@@ -39,22 +40,21 @@ const NavigationWrapper = styled.div`
 
 
 const Header  = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
 
-  const handleToggle = () => {
-    setNavbarOpen(!navbarOpen);
-  }
-
+  const { navbarOpen, toggleNavbar } = useToggleNavbar();
   return (
     <HeaderWrapper>
       <NavigationWrapper>
         <HamburgerWrapper 
-          navbarOpen={navbarOpen} 
-          onClick={handleToggle}
+          navbarOpen={navbarOpen}
+          onClick={toggleNavbar}
         >
-          { navbarOpen ? <IoMdClose /> : <GiHamburgerMenu /> } 
+          { navbarOpen ? <IoMdClose/> : <GiHamburgerMenu/> } 
         </HamburgerWrapper>
-        <Navigation isNavbarOpen={navbarOpen}></Navigation>
+        <Navigation 
+          isNavbarOpen={navbarOpen}
+        >
+        </Navigation>
       </NavigationWrapper>
       <Carousel images={carousel}></Carousel>
     </HeaderWrapper>
