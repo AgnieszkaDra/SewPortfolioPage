@@ -27,7 +27,7 @@ export interface Item {
    price?: number;
    index?: number;
    features?: string[];
-   collection: string
+   collection?: string
 }
 
 export interface Feature {
@@ -48,9 +48,26 @@ export interface CategoryProps {
 }
  
 
-export interface Products {
-   categories: CategoryProps[];
-}
+export interface ProductItem  {
+   title?: string;
+   imageBackground?: string;
+   imagesCarousel?: string[];
+   price?: number;
+   index?: number;
+   features?: string[];
+   collection: string
+ }
+ 
+ export interface Products  {
+   [key: number]: {
+     name: string;
+     category: string;
+     id: string;
+     items: ProductItem[];
+     background?: string
+      collection: Collection;
+   };
+ }
 
 export interface ProductProps {
    index?: number;

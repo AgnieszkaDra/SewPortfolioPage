@@ -10,8 +10,7 @@ import { useShowProduct } from '../../../hooks/useShowModal.tsx';
 const ProductsContainer = () => {
   
   const { categoryName } = useParams()
-
-  const product = products.categories.find(category => category.name === categoryName);
+  const product = Object.values(products).find(category => category.name === categoryName);
 
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -38,7 +37,7 @@ const ProductsContainer = () => {
         </Link>
       </div>
       <ul className={`${styles.products} ${isLoaded ? styles.open : ''}`} >
-       {product?.items?.map((item, index) => (
+       {product?.items?.map((item: object, index: number) => (
          <Product 
           key={index} 
           index={index} 

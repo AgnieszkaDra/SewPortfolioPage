@@ -75,8 +75,7 @@ import skirtsBackground from '../assets/skirts/skirtsBackground.jpg'
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200 , SKIRTS = 300 }
 
 export const products: Products = {
-      categories: [
-      {
+    0: {
         name: 'Bluzy',
         category: 'Child',
         id: uuidv4(),
@@ -126,7 +125,7 @@ export const products: Products = {
         background: basicBackground,
         collection: Collection.BASIC
       },
-      {
+      1: {
         name: 'Komplety', 
         category: 'Child',
         id: uuidv4(),
@@ -149,7 +148,7 @@ export const products: Products = {
         ],
         collection: Collection.BASIC
       },
-      {
+      2: {
         name: 'Spódnice i Sukienki',
         category: 'Child',
         id: uuidv4(),
@@ -179,7 +178,7 @@ export const products: Products = {
         ],
         collection: Collection.SKIRTS
       },
-       {
+      3: {
         name: 'Spodnie',
         category: 'Child',
         id: uuidv4(),
@@ -244,7 +243,7 @@ export const products: Products = {
         ],
         collection: Collection.BASIC
       },
-      {
+      4: {
         name: 'Akcesoria',
         category: 'Child',
         id: uuidv4(),
@@ -288,7 +287,7 @@ export const products: Products = {
         ],
         collection: Collection.ACCESSORIES
       },
-    ]
+    
   }
 
   export default products
