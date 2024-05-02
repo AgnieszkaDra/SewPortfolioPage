@@ -4,19 +4,19 @@
 .nav {
    
     display: none;
-    &__close {
-        height: 70px;
-        width: 100%;
-        background-color: pink;
+    // &__close {
+    //     height: 70px;
+    //     width: 100%;
+    //     background-color: pink;
         
-    @media screen and (min-width: 575px) {
-        width: 10%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    // @media screen and (min-width: 575px) {
+    //     width: 10%;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
 
-    }
+    
     &__menu {
        width: 90%;
         background-color: $color-white;
@@ -53,8 +53,8 @@
         flex-direction: column;
     }
 }
-}
 
+}
 .list {
     @media screen and (min-width: 575px) {
         width: 25%;

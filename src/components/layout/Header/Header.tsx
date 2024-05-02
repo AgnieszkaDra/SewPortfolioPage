@@ -23,6 +23,32 @@ const HamburgerWrapper = styled.div<{ navbarOpen: boolean }>`
   }
 `;
 
+const IconCloseWrapper = styled.div<{ navbarOpen: boolean }>`
+
+position: absolute;
+top: 0px;
+left: 0px;
+background-color: ${({ theme }) => theme.colors.chocoDarken};
+padding: 15px;
+width:50px;
+z-index: 10;
+border: 3px solid pink;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+svg {
+  width:100%;
+  height: 100%;
+  z-index: 3;
+ 
+}
+`;
+
+const IconClose = styled(IoMdClose)`
+  width: 100%;
+  height: 100%;
+`;
+
 const HeaderWrapper = styled.header`
   height: 100vh;
   position: relative;
@@ -38,27 +64,25 @@ const NavigationWrapper = styled.div`
   background-color: transparent;
 `;
 
-
 const Header  = () => {
-
   const { navbarOpen, toggleNavbar } = useToggleNavbar();
   return (
     <HeaderWrapper>
       <NavigationWrapper>
-        <HamburgerWrapper 
-          navbarOpen={navbarOpen}
-          onClick={toggleNavbar}
-        >
-          { navbarOpen ? <IoMdClose/> : <GiHamburgerMenu/> } 
-        </HamburgerWrapper>
-        <Navigation 
-          isNavbarOpen={navbarOpen}
-        >
-        </Navigation>
+        {navbarOpen ? (
+          <IconCloseWrapper navbarOpen={navbarOpen} onClick={toggleNavbar}>
+            <IconClose />
+          </IconCloseWrapper>
+        ) : (
+          <HamburgerWrapper navbarOpen={navbarOpen} onClick={toggleNavbar}>
+            <GiHamburgerMenu />
+          </HamburgerWrapper>
+        )}
+        <Navigation isNavbarOpen={navbarOpen} />
       </NavigationWrapper>
-      <Carousel images={carousel}></Carousel>
+      <Carousel images={carousel} />
     </HeaderWrapper>
   );
 };
 
-export default Header
+export default Header;
