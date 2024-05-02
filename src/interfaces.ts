@@ -21,7 +21,8 @@ export interface NavigationProps {
 // }
 
 export interface NavigationProps {
-   isNavbarOpen: boolean
+   isNavbarOpen: boolean;
+   onClick?: () => void;
 }
 
 export interface Item {

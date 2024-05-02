@@ -1,6 +1,4 @@
-
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoMdClose } from "react-icons/io";
 import Navigation from '../../ui/Navigation/Navigation';
 import Carousel from '../../ui/Carousel/Carousel';
 import carousel from '../../../data/carousel';
@@ -23,32 +21,6 @@ const HamburgerWrapper = styled.div<{ navbarOpen: boolean }>`
   }
 `;
 
-const IconCloseWrapper = styled.div<{ navbarOpen: boolean }>`
-
-position: absolute;
-top: 0px;
-left: 0px;
-background-color: ${({ theme }) => theme.colors.chocoDarken};
-padding: 15px;
-width:50px;
-z-index: 10;
-border: 3px solid pink;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-svg {
-  width:100%;
-  height: 100%;
-  z-index: 3;
- 
-}
-`;
-
-const IconClose = styled(IoMdClose)`
-  width: 100%;
-  height: 100%;
-`;
-
 const HeaderWrapper = styled.header`
   height: 100vh;
   position: relative;
@@ -60,7 +32,7 @@ const NavigationWrapper = styled.div`
   height: 10vh;
   position: relative;
   display: flex;
-  z-index: 3;
+  z-index: 2;
   background-color: transparent;
 `;
 
@@ -69,16 +41,19 @@ const Header  = () => {
   return (
     <HeaderWrapper>
       <NavigationWrapper>
-        {navbarOpen ? (
-          <IconCloseWrapper navbarOpen={navbarOpen} onClick={toggleNavbar}>
-            <IconClose />
-          </IconCloseWrapper>
+        { navbarOpen ? (
+          <Navigation 
+            isNavbarOpen={navbarOpen} 
+            onClick={toggleNavbar}
+          />
         ) : (
-          <HamburgerWrapper navbarOpen={navbarOpen} onClick={toggleNavbar}>
+          <HamburgerWrapper 
+            navbarOpen={navbarOpen} 
+            onClick={toggleNavbar}
+          >
             <GiHamburgerMenu />
           </HamburgerWrapper>
-        )}
-        <Navigation isNavbarOpen={navbarOpen} />
+        ) }
       </NavigationWrapper>
       <Carousel images={carousel} />
     </HeaderWrapper>

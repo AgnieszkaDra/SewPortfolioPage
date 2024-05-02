@@ -1,15 +1,14 @@
-
 import { NavigationProps } from '../../../interfaces';
 import styles from './Navigation.module.scss';
 import styled from 'styled-components';
 import { IoMdClose } from "react-icons/io";
+import { useToggleNavbar } from '../../../hooks/useNavbar';
 
 const NavigationWrapper = styled.nav<{ isOpen: boolean }>`
   ${ props => props.isOpen && `
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 2;
       display: flex;
       flex-direction: row; 
       background-color: bisque;
@@ -21,48 +20,42 @@ const NavigationWrapper = styled.nav<{ isOpen: boolean }>`
     `}
   `;
 
-const NavController = styled.div`
-height: 70px;
-  
-    background-color: pink;
-    
-@media screen and (min-width: 575px) {
+  const IconCloseWrapper = styled.div<{ navbarOpen: boolean }>`
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: ${({ theme }) => theme.colors.smokeWhite};
     padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  `;
-
-  const IconCloseWrapper = styled.div`
-  background-color: red;
-  color: ${({ theme }) => theme.colors.text}; // Set the color to match your theme
-  width: 24px; // Adjust width if needed
-  height: 24px; // Adjust height if needed
-  svg {
-    width:100%;
-    height: 100%;
+    min-height: 100vh;
     z-index: 3;
-  }
-`;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    svg {
+      width:100%;
+      height: 100%;
+    }
+  `;
 
 const IconClose = styled(IoMdClose)`
   color: ${({ theme }) => theme.colors.text};
-  width: 100%;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.lightGrey};
+  padding: 2px;
   height: 100%;
 `;
 
-export const Navigation: React.FC<NavigationProps> = ({ isNavbarOpen }) => {
+export const Navigation: React.FC<NavigationProps> = ({ isNavbarOpen, onClick }) => {
+  const { navbarOpen } = useToggleNavbar();
   return (
     <>
     { isNavbarOpen ? (
       <NavigationWrapper isOpen={true}>
-        {/* <NavController /> */}
-        {/* <IconCloseWrapper>
-              <IconClose/>
-            </IconCloseWrapper>  */}
+        <IconCloseWrapper navbarOpen={navbarOpen} onClick={ onClick }>
+          <IconClose />
+        </IconCloseWrapper>
         <div className={styles.nav__menu}>
-      <ul className={styles.list}>
+        <ul className={styles.list}>
         <li className={styles.list__element}>
           <a>
             Strona główna
@@ -85,11 +78,7 @@ export const Navigation: React.FC<NavigationProps> = ({ isNavbarOpen }) => {
   <NavigationWrapper isOpen={false} />
 )}
   </>
-  
-    
-  )
-
+)
 }
-
 
 export default Navigation
