@@ -12,6 +12,7 @@ const theme = {
 		chocoDarken: darken(0.02, '#e3d9c4'),
 		chocoLighten: lighten(0.05, '#e3d9c4'),
 		text: '#444444',
+		textLight: '#999999',
 		textLighten: lighten(0.02, '#444444' )
 	},
 	fontSize: {

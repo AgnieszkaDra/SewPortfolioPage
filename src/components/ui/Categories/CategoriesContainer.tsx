@@ -4,7 +4,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import products from '../../../data/products.ts';
 import styled from 'styled-components';
 
-const CategoriesWrapper = styled.div`
+const CategoriesWrapper = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: max(30px);
@@ -27,7 +27,7 @@ const CategoriesWrapper = styled.div`
   }
 `;
 
-const CategoryWrapper = styled.div`
+const CategoryWrapper = styled.li`
   height: 400px;
   padding: 50px 50px;
   background-size: cover;
