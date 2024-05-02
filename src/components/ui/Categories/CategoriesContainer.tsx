@@ -102,7 +102,7 @@ const CategoriesContainer = () => {
         return (
           <CategoryWrapper
             key={category.id}
-            style={{ backgroundImage: ` url(${category.background})`, opacity: '0.7' }}
+            style={{ backgroundImage: `url(${category.background})`, opacity: '0.7' }}
           >
             <Category>
             <h2 style={{ fontWeight: 700 }}>{category.name}</h2>
