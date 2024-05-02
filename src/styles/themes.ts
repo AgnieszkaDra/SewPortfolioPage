@@ -5,12 +5,14 @@ const theme = {
 	colors: {
 		white: '#FFFFFF',
 		smokeWhite: '#F5F5F5',
+		veryLightGrey: '#e2e2e2',
 		lightGrey: '#999999',
 		darkGrey: '#282828',
 		choco: '#e3d9c4',
 		chocoDarken: darken(0.02, '#e3d9c4'),
-		text: '#2a2b47',
-		textLighten: lighten(0.02, '#2a2b47' )
+		chocoLighten: lighten(0.05, '#e3d9c4'),
+		text: '#444444',
+		textLighten: lighten(0.02, '#444444' )
 	},
 	fontSize: {
 		small: '0.75rem',

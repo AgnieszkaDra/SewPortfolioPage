@@ -55,18 +55,18 @@
 }
 
 }
-.list {
-    @media screen and (min-width: 575px) {
-        width: 25%;
-    }
-    &__element{
-        text-transform: uppercase;
-        letter-spacing: .1em;
-        margin-bottom: 10px;
-        a {
-            padding: 5px;
-            font-size: 1.15em;
-        }
-    }
+// .list {
+//     @media screen and (min-width: 575px) {
+//         width: 25%;
+//     }
+//     &__element{
+//         text-transform: uppercase;
+//         letter-spacing: .1em;
+//         margin-bottom: 10px;
+//         a {
+//             padding: 5px;
+//             font-size: 1.15em;
+//         }
+//     }
 
-}
+// }
