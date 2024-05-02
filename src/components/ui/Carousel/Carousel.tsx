@@ -55,10 +55,8 @@ const StyledLink = styled(Link)`
     text-decoration: none;
   `;
 
-
 const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {
 
-    
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
 

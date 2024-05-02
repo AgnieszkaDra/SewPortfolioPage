@@ -15,11 +15,6 @@ export interface NavigationProps {
    isNavbarOpen: boolean
 }
 
-// export interface CarouselProps {
-//    images: Image[];
-//    interval: number
-// }
-
 export interface NavigationProps {
    isNavbarOpen: boolean;
    onClick?: () => void;
@@ -83,8 +78,8 @@ export interface ButtonProps {
    variant?: string
    size?: string;
    type?: 'button' | 'submit' | 'reset'; 
-   style?: CSSProperties;// Specify the allowed variant values here
-   onClick?: () => void; // onClick should be a function that takes no arguments and returns void
+   style?: CSSProperties;
+   onClick?: () => void; 
  }
 
  export interface Theme {
