@@ -29,7 +29,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const LinkWrapper = styled.div<{ isAnimating?: boolean }>`
-    @keyframes slideUp {
+    @keyframes slideLeft {
         from {
             transform: translate(-100%, -50%);
         }
@@ -43,7 +43,7 @@ const LinkWrapper = styled.div<{ isAnimating?: boolean }>`
     left: 50%;
     transform: translate(-50%, -50%);
     ${({ isAnimating }) => isAnimating && `
-        animation: slideUp 2s ease forwards;
+        animation: slideLeft 2s ease forwards;
     `}
     `;
 
