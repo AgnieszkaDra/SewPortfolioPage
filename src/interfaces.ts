@@ -1,9 +1,9 @@
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200, SKIRTS = 300 }
 import { CSSProperties } from 'react';
+
 export interface HeaderProps {
    logo: string
 }
-
 
 export interface Image {
    name: string,
@@ -12,11 +12,7 @@ export interface Image {
 }
 
 export interface NavigationProps {
-   isNavbarOpen: boolean
-}
-
-export interface NavigationProps {
-   isNavbarOpen: boolean;
+   isNavbarOpen?: boolean;
    onClick?: () => void;
 }
 
@@ -47,7 +43,6 @@ export interface CategoryProps {
    };
 }
  
-
 export interface ProductItem  {
    title?: string;
    imageBackground?: string;
