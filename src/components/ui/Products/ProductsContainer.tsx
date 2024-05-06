@@ -1,12 +1,12 @@
 import  { useEffect, useState } from 'react';
 import { Link as RouterLink, useParams } from 'react-router-dom';
-
-import products from '../../../data/products.ts';
-
 import Product from './Product.tsx';
-import styles from '../../Products/Products.module.scss'
 import { useShowProduct } from '../../../hooks/useShowModal.tsx';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import { IoMdClose } from "react-icons/io";
 import styled from 'styled-components';
+import products from '../../../data/products.ts';
 
 const ProductsContainer = () => {
   
@@ -16,18 +16,18 @@ const ProductsContainer = () => {
   const [isDisplayingProduct, setIsDisplayingProduct] = useState(false);
   const displayedProductSettings = { setIsDisplayingProduct,  isDisplayingProduct};
   const { showProduct, selectedItem, handleOpenProduct, handleCloseProduct } = useShowProduct();
-
+  
   const ProductsWrapper = styled.div`
     color: ${({ theme }) => theme.colors.text};
   `;
 
-  const StyledLink = styled(RouterLink)`
-    font-size: 14px;
-    color: ${({ theme }) => theme.colors.textLight};
-    text-decoration: none;
-  `;
+const StyledLink = styled(RouterLink)`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.textLight};
+  text-decoration: none;
+`;
 
-  const ProductsList = styled.ul<{ isLoaded: boolean }>`
+const ProductsList = styled.ul<{ isLoaded: boolean }>`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -59,7 +59,61 @@ const ProductsContainer = () => {
       props.isLoaded && `
       animation: slideUp 2s ease-in-out forwards;
     `}
-  `;
+`;
+
+const ProductStyle = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: ${({ theme }) => theme.colors.smokeWhite};
+  position: relative
+`
+
+const ProductImage = styled.div`
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+`
+
+const IconCloseWrapper = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: ${({ theme }) => theme.colors.veryLightGrey};
+  padding: 15px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  svg {
+    width:100%;
+    height: 100%;
+  }
+`;
+
+const IconClose = styled(IoMdClose)`
+  color: ${({ theme }) => theme.colors.text};
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.smokeWhite};
+  padding: 2px;
+  height: 100%;
+`;
+
+const BoxStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  display: 'flex',
+  width: '960px',
+  height:'90%',
+  p: 4,
+}
+
+const ProductDescription = styled.div`
+  padding-left: 45px;
+`;
 
   useEffect(() => {
     setIsLoaded(true); 
@@ -75,33 +129,45 @@ const ProductsContainer = () => {
         <ProductsList isLoaded={isLoaded}>
           { product?.items?.map((item: object, index: number) => (
             <Product 
-              key={index} 
+              key={index}  
               index={index} 
               item={item}
               editable={false}
               onClick={() => handleOpenProduct(item)}
               displayedProductSettings= {displayedProductSettings}
-              />
+            />
             ))}
         </ProductsList>
-        {showProduct && selectedItem && (
-  <div className={styles.modal}>
-    <div className={styles.modal__content}>
-      <div className={styles.modal__images} style={{backgroundImage: `url(${selectedItem.imageBackground})`}}>
-      </div>
-      <div className={styles.modal__description}>
-        <div className={styles.close} onClick={handleCloseProduct}>Zamknij</div>
-        <h2>{selectedItem.title}</h2>
-        <p>{selectedItem.price}</p>
-        <div className={styles.list}>
-          <ul>
-            <li>{selectedItem.feature}</li>
-          </ul> 
-        </div>
-      </div>
-    </div>
-  </div>
-)}
+        { showProduct && selectedItem && (
+          <>        
+            <Modal
+              open={ showProduct }
+              onClose={ handleCloseProduct }
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <ProductStyle>
+                <Box sx={ BoxStyle }>
+                  <ProductImage style={{ backgroundImage: `url(${ selectedItem.imageBackground })`}}>
+                  </ProductImage>
+                  <ProductDescription>
+                    <IconCloseWrapper onClick={ handleCloseProduct }>
+                    <IconClose />
+                    </IconCloseWrapper>
+                    <h1>{ selectedItem.title }</h1>
+                    <p>{ selectedItem.price }</p>
+                    <div>
+                      <ul>
+                        <li>{ selectedItem.feature }</li>
+                      </ul> 
+                    </div>
+                  </ProductDescription>
+                </Box>
+              </ProductStyle>
+            </Modal>
+          </>
+          )
+        }
       </ProductsWrapper>
     </section>
   );
