@@ -27,7 +27,7 @@ const CategoriesWrapper = styled.ul`
   }
 `;
 
-const CategoryWrapper = styled.li`
+const CategoryWrapper = styled.linearGradient`
   height: 400px;
   padding: 50px 50px;
   background-size: cover;
