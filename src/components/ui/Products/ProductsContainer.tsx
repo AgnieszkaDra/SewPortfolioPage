@@ -152,7 +152,7 @@ const ProductDescription = styled.div`
                   </ProductImage>
                   <ProductDescription>
                     <IconCloseWrapper onClick={ handleCloseProduct }>
-                    <IconClose />
+                      <IconClose />
                     </IconCloseWrapper>
                     <h1>{ selectedItem.title }</h1>
                     <p>{ selectedItem.price }</p>

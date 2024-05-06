@@ -1,46 +1,78 @@
 import React, { useState }  from 'react';
 import { ProductProps } from '../../../interfaces';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-
-import styles from '../../Products/Products.module.scss'
+import { IoIosResize } from "react-icons/io";
+import styled from 'styled-components';
 
 const Product: React.FC<ProductProps> = ({ index, item, onClick }) => {
 const [isHovered, setIsHovered] = useState(false);
 
-
-  return (
-
-      <li key={index} 
-        className={`${styles.products__product} ${styles.product}`} 
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={() => onClick(item)}
-      >
-        <figure className={styles.products__image}>
-          <div 
-            className={`${styles.products__actions} ${isHovered ? styles.visible : ''}`}
-            // onClick={() => onClick(item)}
-          >
-            <div className={`${styles.actions__view}`}>
-              <FontAwesomeIcon icon={faArrowLeft} className={styles.arrowLeft} />
-              <FontAwesomeIcon icon={faArrowRight} className={styles.arrowRight}/>
-            </div>
-          </div>
-          <img src={item.imageBackground} alt={`Image ${index}`} /> 
-        </figure>
-        <div className={styles.products__caption}>
-          <div className={styles.products__title}>
-            <h3>{item.title}</h3> 
-          </div>
-          <div className={styles.products__price}>
-          <span>{item.price}zł </span> 
-          </div>
-        </div>
-      </li>
+const IconResizeWrapper = styled.div<{ isHovered: boolean }>`
+  display: none;
+  color: ${({ theme }) => theme.colors.lightGrey};
+  background-color: ${({ theme }) => theme.colors.veryLightGrey};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.smokeWhite};
+  } 
   
-  );
+  ${props =>
+    props.isHovered && `
+    display: flex;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+        width: 65%;
+        height: 65%;
+      }  
+  `}
+`;
+
+const ProductWrapper = styled.li`
+  height: 400px;
+  display: grid;
+  grid-template-rows: 320px 40px 40px;
+
+  & > * {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+  }
+
+  &:hover {
+      transform: scale(1.02);
+  }
+`;
+
+const CaptionWrapper = styled.div`
+  padding-top: 1rem;
+`;
+
+return (
+  <ProductWrapper 
+    key={index}
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
+    onClick={() => onClick(item)}
+  >
+    <figure>
+      <IconResizeWrapper isHovered={isHovered}>
+        <IoIosResize />
+      </IconResizeWrapper>
+      <img src={item.imageBackground} alt={`Image ${index}`} /> 
+    </figure>
+    <CaptionWrapper>
+      <h3>{item.title}</h3>
+      <span>{item.price}zł </span>
+    </CaptionWrapper>
+  </ProductWrapper>
+);
 };
 
 export default Product;
