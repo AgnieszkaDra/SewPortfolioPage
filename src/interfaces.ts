@@ -49,7 +49,8 @@ export interface CategoryProps {
  
 
 export interface ProductItem  {
-   title?: string;
+   name: string;
+   id: number;
    imageBackground?: string;
    imagesCarousel?: string[];
    price?: number;
@@ -62,10 +63,10 @@ export interface ProductItem  {
    [key: number]: {
      name: string;
      category: string;
-     id: string;
+     id: number;
      items: ProductItem[];
      background?: string
-      collection: Collection;
+      collection: string;
    };
  }
 
