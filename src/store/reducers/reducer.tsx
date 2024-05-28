@@ -1,7 +1,7 @@
 
 import { SET_PRODUCTS } from '../actions/actionTypes';
 import { SET_CATEGORIES } from '../actions/actionTypes';
-import { Products, ProductAction, ProductsState } from '../../interfaces';
+import { Products, ProductAction, ProductsState, ProductItem } from '../../interfaces';
 
 
 const initialState: ProductsState = {
@@ -9,29 +9,20 @@ const initialState: ProductsState = {
     productsElementsCategories: {},
   };
 
-
-// const filterUniqueCollectionTypes = (products: Products) => {
-//     const uniqueCollectionTypes = {};
-//     const seenCollectionTypes = new Set();
+const filterUniqueCollectionTypes = (products: Products): { [key: string]: ProductItem } => {
+    const uniqueCollectionTypes: { [key: string]: ProductItem } = {};
+    const seenCollectionTypes = new Set<string>();
     
-//     for (const key in products) {
-//         const product = products[key];
-//         if (product.collectionType && !seenCollectionTypes.has(product.collectionType)) {
-//             uniqueCollectionTypes[key] = product;
-//             seenCollectionTypes.add(product.collectionType);
-//         }
-//     }
-
-//     return uniqueCollectionTypes;
-//   };
-
-const filterUniqueCollectionTypes = (products: Products): string[] => {
-    const collectionTypes = new Set<string>();
     for (const key in products) {
-      collectionTypes.add(products[key].collectionType);
+        const product = products[key];
+        if (product.collectionType && !seenCollectionTypes.has(product.collectionType)) {
+            uniqueCollectionTypes[product.collectionType] = product;
+            seenCollectionTypes.add(product.collectionType);
+        }
     }
-    return Array.from(collectionTypes);
-  };
+
+    return uniqueCollectionTypes;
+};
 
 
   const productReducer = (state = initialState, action: ProductAction): ProductsState => {

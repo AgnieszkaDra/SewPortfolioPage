@@ -107,7 +107,8 @@ export interface ProductProps {
 }
 
 export interface AppState {
-   productReducer: ProductsState;
+   productsElementsCategories: ProductsState;
+   productsElements: ProductsState;
  }
  
 export interface ProductData {
