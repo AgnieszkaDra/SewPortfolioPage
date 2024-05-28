@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
 import { Products } from '../interfaces'
 import ball1a from '../assets/AreaOfChild/Blouses/Ball/ball.1a.jpg'
 import ball1b from '../assets/AreaOfChild/Blouses/Ball/ball.1b.jpg'
@@ -61,248 +60,16 @@ import cap2c from '../assets/AreaOfChild/Accessories/cap.2c.jpg'
 import forestBag1a from '../assets/AreaOfChild/Accessories/forest-bag.1a.jpg'
 import forestBag1b from '../assets/AreaOfChild/Accessories/forest-bag.1b.jpg'
 import forestBag1c from '../assets/AreaOfChild/Accessories/forest-bag.1c.jpg'
-// import basic1 from '../assets/basics/basic1.jpg'
-// import basic2 from '../assets/basics/basic2.jpg'
-// import basic3 from '../assets/basics/basic3.jpg'
-// import basic4 from '../assets/basics/basic4.jpg'
-// import basic5 from '../assets/basics/basic5.jpg'
-import basicBackground from '../assets/basics/basicBackground.jpg'
-
-import accessoriesBackground from '../assets/accessories/accessoriesBackground.jpg'
-
-import skirtsBackground from '../assets/skirts/skirtsBackground.jpg'
-
-enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200 , SKIRTS = 300 }
-
-// export const products: Products = {
-//     0: {
-//         name: 'Bluzy',
-//         category: 'Child',
-//         id: uuidv4(),
-//         items: [
-//           {
-//             title: 'Bluza Ball',
-//             imageBackground: ball1a,
-//             imagesCarousel: [ball1a, ball1b],
-//             price: 100,
-//             collection: 'CHILD',
-//             // features:  [
-//             //   { description: 'bluza wykonana z bawełny', /* other properties */ },
-//             // { description: 'lużny krój', /* other properties */ },
-//             // { description: 'ciepła', /* other properties */ }
-//             // ],
-//             features:  [ 'bluza wykonana z bawełny', 'lużny krój', 'ciepła' ]
-//           },
-//           {
-//             title: 'Bluza Rabbit',
-//             imageBackground: rabbit1a,
-//             imagesCarousel: [rabbit1a, rabbit1b, rabbit1c,  rabbit1d, rabbit1e, rabbit1f, rabbit2a, rabbit2b, rabbit2c],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Bluza Skateboard',
-//             imageBackground: skateboards1a,
-//             imagesCarousel: [skateboards1a, skateboards1b, skateboards1c,  skateboards1d, skateboards1e ],
-//             price: 150,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Bluza Violet',
-//             imageBackground: violet1a,
-//             imagesCarousel: [violet1a, violet1b, violet1c],
-//             price: 65,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Bluza Wolf',
-//             imageBackground: wolf1a,
-//             imagesCarousel: [wolf1a, wolf1b, wolf1c, wolf1d],
-//             price: 78,
-//             collection: 'CHILD'
-//           }
-//         ],
-//         background: basicBackground,
-//         collection: Collection.BASIC
-//       },
-//       1: {
-//         name: 'Komplety', 
-//         category: 'Child',
-//         id: uuidv4(),
-//         background: violetComplet1a,
-//         items: [
-//           {
-//             title: 'Komplet Violet',
-//             imageBackground: violetComplet1a,
-//             imagesCarousel: [violetComplet1a, violetComplet1b, violetComplet1c],
-//             price: 100,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Komplet Whale',
-//             imageBackground: whale1a,
-//             imagesCarousel: [whale1a, whale1b, whale1c, whale1d],
-//             price: 100,
-//             collection: 'CHILD'
-//           },
-//         ],
-//         collection: Collection.BASIC
-//       },
-//       2: {
-//         name: 'Spódnice i Sukienki',
-//         category: 'Child',
-//         id: uuidv4(),
-//         background: skirtsBackground,
-//         items: [
-//           {
-//             title: 'Spódnica Cherry',
-//             imageBackground: cherry1b,
-//             imagesCarousel: [cherry1a, cherry1b, cherry1c],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Spódnica Fairy',
-//             imageBackground: fairy1a,
-//             imagesCarousel: [fairy1a, fairy1b],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Spódnica Hearts',
-//             imageBackground: hearts1a,
-//             imagesCarousel: [hearts1a, hearts1b, hearts1c],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//         ],
-//         collection: Collection.SKIRTS
-//       },
-//       3: {
-//         name: 'Spodnie',
-//         category: 'Child',
-//         id: uuidv4(),
-//         background: trousersWithRabbit1a,
-//         items: [
-//           {
-//             title: 'Spodnie Violet',
-//             imageBackground: trousersViolet1a,
-//             imagesCarousel: [trousersViolet1a, trousersViolet1b],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Spodnie Rabbit',
-//             imageBackground: trousersWithRabbit1a,
-//             imagesCarousel: [trousersWithRabbit1a, trousersWithRabbit1b, trousersWithRabbit1c],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Spodnie Bear',
-//             imageBackground: trousers1a,
-//             imagesCarousel: [trousers1a],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Spodnie Flowers',
-//             imageBackground: trousers1b,
-//             imagesCarousel: [trousers1b],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Spodnie Strips',
-//             imageBackground: trousers1c,
-//             imagesCarousel: [trousers1c],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Spodnie Strips',
-//             imageBackground: trousers1d,
-//             imagesCarousel: [trousers1d],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Spodnie Strips',
-//             imageBackground: trousers1e,
-//             imagesCarousel: [trousers1e],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Spodnie Skateboards',
-//             imageBackground: trousers1f,
-//             imagesCarousel: [trousers1f],
-//             price: 90,
-//             collection: 'CHILD'
-//           },
-//         ],
-//         collection: Collection.BASIC
-//       },
-//       4: {
-//         name: 'Akcesoria',
-//         category: 'Child',
-//         id: uuidv4(),
-//         background: accessoriesBackground,
-//         items: [
-//           {
-//             title: 'Komplet Bear',
-//             imageBackground: cap1a,
-//             imagesCarousel: [cap1a, cap1b],
-//             price: 100,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Czapka Bear',
-//             imageBackground: cap2a,
-//             imagesCarousel: [cap2a, cap2b, cap2c],
-//             price: 120,
-//             collection: 'CHILD'
-//           },
-//           {
-//             title: 'Worek Szkolny Forest',
-//             imageBackground: forestBag1a,
-//             imagesCarousel: [forestBag1a, forestBag1b, forestBag1c],
-//             price: 50,
-//             collection: 'CHILD'
-//           }, 
-//           {
-//             title: 'Opaski Color',
-//             imageBackground: band1,
-//             imagesCarousel: [band1, band2],
-//             price: 60,
-//             collection: 'WOMAN'
-//           },
-//           {
-//             title: 'Komplet Winter',
-//             imageBackground: completBand1,
-//             imagesCarousel: [completBand1, completBand2],
-//             price: 90,
-//             collection: 'WOMAN'
-//           },
-//         ],
-//         collection: Collection.ACCESSORIES
-//       },
-    
-// }
 
 export const products: Products = {
-  0: {
-    id: 0,
-    name: '(RootProducts)',
-    childIds: []
-  },
   1: {
     id: 1,
     name: 'Bluza Ball',
     imageBackground: ball1a,
     imagesCarousel: [ball1a, ball1b],
     price: 100,
-    collection: 'CHILD',
+    collectionMain: 'CHILD',
+    collectionType: 'Bluzy',
     features:  [ 'bluza wykonana z bawełny', 'luźny krój', 'ciepła' ]
   },
   2: {
@@ -311,7 +78,8 @@ export const products: Products = {
     imageBackground: rabbit1a,
     imagesCarousel: [rabbit1a, rabbit1b, rabbit1c,  rabbit1d, rabbit1e, rabbit1f, rabbit2a, rabbit2b, rabbit2c],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Bluzy',
   },
   3: {
     id: 3, 
@@ -319,7 +87,8 @@ export const products: Products = {
     imageBackground: skateboards1a,
     imagesCarousel: [skateboards1a, skateboards1b, skateboards1c,  skateboards1d, skateboards1e ],
     price: 150,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Bluzy',
   },
   4: {
     id: 4,
@@ -327,7 +96,8 @@ export const products: Products = {
     imageBackground: violet1a,
     imagesCarousel: [violet1a, violet1b, violet1c],
     price: 65,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Bluzy',
   },
   5: {
     id: 5,
@@ -335,7 +105,8 @@ export const products: Products = {
     imageBackground: wolf1a,
     imagesCarousel: [wolf1a, wolf1b, wolf1c, wolf1d],
     price: 78,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Bluzy',
   },
   6: {
     id: 6,
@@ -343,7 +114,8 @@ export const products: Products = {
     imageBackground: violetComplet1a,
     imagesCarousel: [violetComplet1a, violetComplet1b, violetComplet1c],
     price: 100,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Komplety',
   },
   7: {
     id: 7,
@@ -351,7 +123,8 @@ export const products: Products = {
     imageBackground: whale1a,
     imagesCarousel: [whale1a, whale1b, whale1c, whale1d],
     price: 100,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Komplety',
   },
   8: {
     id: 8,
@@ -359,15 +132,17 @@ export const products: Products = {
     imageBackground: cherry1b,
     imagesCarousel: [cherry1a, cherry1b, cherry1c],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spódnice i sukienki',
   },
   9: {
     id: 9, 
-    title: 'Spódnica Fairy',
+    name: 'Spódnica Fairy',
     imageBackground: fairy1a,
     imagesCarousel: [fairy1a, fairy1b],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spódnice i sukienki'
   },
   10: {
     id: 10,
@@ -375,7 +150,8 @@ export const products: Products = {
     imageBackground: hearts1a,
     imagesCarousel: [hearts1a, hearts1b, hearts1c],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spódnice i sukienki'
   },
   11: {
     id: 11,
@@ -383,7 +159,8 @@ export const products: Products = {
     imageBackground: trousersViolet1a,
     imagesCarousel: [trousersViolet1a, trousersViolet1b],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spodnie'
   },
   12: {
     id: 12,
@@ -391,7 +168,8 @@ export const products: Products = {
     imageBackground: trousersWithRabbit1a,
     imagesCarousel: [trousersWithRabbit1a, trousersWithRabbit1b, trousersWithRabbit1c],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spodnie'
   },
   13: {
     id: 13, 
@@ -399,15 +177,17 @@ export const products: Products = {
     imageBackground: trousers1a,
     imagesCarousel: [trousers1a],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spodnie'
   },
   14: {
     id: 14,
-    title: 'Spodnie Flowers',
+    name: 'Spodnie Flowers',
     imageBackground: trousers1b,
     imagesCarousel: [trousers1b],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spodnie'
   },
   15: {
     id: 15,
@@ -415,7 +195,8 @@ export const products: Products = {
     imageBackground: trousers1c,
     imagesCarousel: [trousers1c],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spodnie'
   },
   16: {
     id: 16,
@@ -423,7 +204,8 @@ export const products: Products = {
     imageBackground: trousers1d,
     imagesCarousel: [trousers1d],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spodnie'
   },
   17: {
     id: 17,
@@ -431,7 +213,8 @@ export const products: Products = {
     imageBackground: trousers1e,
     imagesCarousel: [trousers1e],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spodnie'
   },
   18: {
     id: 18,
@@ -439,7 +222,8 @@ export const products: Products = {
     imageBackground: trousers1f,
     imagesCarousel: [trousers1f],
     price: 90,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Spodnie'
   },
   19: {
     id: 19,
@@ -447,7 +231,8 @@ export const products: Products = {
     imageBackground: cap1a,
     imagesCarousel: [cap1a, cap1b],
     price: 100,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Komplety'
   },
   20: {
     id: 20, 
@@ -455,7 +240,8 @@ export const products: Products = {
     imageBackground: cap2a,
     imagesCarousel: [cap2a, cap2b, cap2c],
     price: 120,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Akcesoria'
   },
   21: {
     id: 21,
@@ -463,7 +249,8 @@ export const products: Products = {
     imageBackground: forestBag1a,
     imagesCarousel: [forestBag1a, forestBag1b, forestBag1c],
     price: 50,
-    collection: 'CHILD'
+    collectionMain: 'CHILD',
+    collectionType: 'Akcesoria'
   },
   22: {
     id: 22,
@@ -471,7 +258,8 @@ export const products: Products = {
     imageBackground: band1,
     imagesCarousel: [band1, band2],
     price: 60,
-    collection: 'WOMAN'
+    collectionMain: 'WOMAN',
+    collectionType: 'Akcesoria'
   },
   23: {
     id: 23,
@@ -479,7 +267,8 @@ export const products: Products = {
     imageBackground: completBand1,
     imagesCarousel: [completBand1, completBand2],
     price: 90,
-    collection: 'WOMAN'
+    collectionMain: 'WOMAN',
+    collectionType: 'Akcesoria'
   }
 }
 
