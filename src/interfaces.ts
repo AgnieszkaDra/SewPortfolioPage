@@ -43,26 +43,30 @@ export interface CategoryProps {
    };
 }
  
-export interface ProductItem  {
-   name: string;
-   id: number;
-   imageBackground?: string;
-   imagesCarousel?: string[];
-   price?: number;
-   index?: number;
-   features?: string[];
-   collection: string
+// export interface ProductItem  {
+//    name: string;
+//    id: number;
+//    imageBackground?: string;
+//    imagesCarousel?: string[];
+//    price?: number;
+//    index?: number;
+//    features?: string[];
+//    collection: string
+//  }
+ 
+ export interface Products {
+   [key: number]: ProductItem;
  }
  
- export interface Products  {
-   [key: number]: {
-     name: string;
-     category: string;
-     id: number;
-     items: ProductItem[];
-     background?: string
-      collection: string;
-   };
+ export interface ProductItem {
+   id: number;
+   name: string;
+   imageBackground: string;
+   imagesCarousel: string[];
+   price: number;
+   collectionMain: string;
+   collectionType: string;
+   features?: string[];
  }
 
 export interface ProductProps {
