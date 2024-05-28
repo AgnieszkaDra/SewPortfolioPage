@@ -5,7 +5,7 @@ import ProductsContainer from './components/ui/Products/ProductsContainer.tsx';
 import Main from './components/layout/Main/Main.tsx';
 
 const App = () => {
- 
+
   return (
     <BrowserRouter>
       <Routes>
