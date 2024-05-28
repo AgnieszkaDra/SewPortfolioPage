@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
 import { Products } from '../interfaces'
 import ball1a from '../assets/AreaOfChild/Blouses/Ball/ball.1a.jpg'
 import ball1b from '../assets/AreaOfChild/Blouses/Ball/ball.1b.jpg'
@@ -138,7 +137,7 @@ export const products: Products = {
   },
   9: {
     id: 9, 
-    title: 'Spódnica Fairy',
+    name: 'Spódnica Fairy',
     imageBackground: fairy1a,
     imagesCarousel: [fairy1a, fairy1b],
     price: 90,
@@ -183,7 +182,7 @@ export const products: Products = {
   },
   14: {
     id: 14,
-    title: 'Spodnie Flowers',
+    name: 'Spodnie Flowers',
     imageBackground: trousers1b,
     imagesCarousel: [trousers1b],
     price: 90,

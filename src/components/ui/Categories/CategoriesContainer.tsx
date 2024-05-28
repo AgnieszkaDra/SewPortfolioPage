@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
+import { AppState } from '../../../interfaces.ts';
 import products from '../../../data/products.ts';
 import { setCategories, setProducts } from '../../../store/actions/actions.tsx';
 import styled from 'styled-components';
@@ -104,8 +104,9 @@ const CategoriesContainer = () => {
     dispatch(setCategories(products));
   }, [dispatch]);
 
- const products2 = useSelector((state) => state.productsElements)
- const categories = useSelector((state) => state.productsElementsCategories)
+//  const products2 = useSelector((state) => state.productsElements)
+//  const categories = useSelector((state) => state.productsElementsCategories)
+ const categories = useSelector((state: AppState) => state.productReducer.productsElementsCategories);
   const categoriesProducts = Object.values(categories).map(product => product)
 
 return (
@@ -127,64 +128,14 @@ return (
              </StyledLink>
             </Category>
          </CategoryWrapper>
+     
         )})}
    
 </CategoriesWrapper>
   </section>
 )
 
-//  return (
-    
-    // <section style={{ width: '100%', position: 'relative' }}>
-    //   <CategoriesWrapper>
-    //     {/* { categories.map((productId) => {
-    //       const category = products[Number(productId)];
-        
-    //     return (
-    //       <CategoryWrapper
-    //         key={category.id}
-    //         style={{ backgroundImage: `url(${category.background})`, opacity: '0.7' }}
-    //       >
-    //         <Category>
-    //         <h2 style={{ fontWeight: 700 }}>{category.name}</h2>
-    //           <StyledLink to={`/category/${category.name}`}>
-    //             <span className={'span'}>Zobacz produkty</span>
-    //             <StyledArrow>
-    //               <FontAwesomeIcon icon={faArrowRight} />
-    //             </StyledArrow>
-    //           </StyledLink>
-    //         </Category>
-    //       </CategoryWrapper>
-    //     )})} */}
-    //      { categories.map((category) => {
-       
-        
-    //     return (
-    //       <CategoryWrapper
-    //         key={category.id}
-    //         style={{ backgroundImage: `url(${category.background})`, opacity: '0.7' }}
-    //       >
-    //         <h2>{category}</h2>
-    //         {/* <Category>
-    //         <h2 style={{ fontWeight: 700 }}>{category.name}</h2>
-    //           <StyledLink to={`/category/${category.name}`}>
-    //             <span className={'span'}>Zobacz produkty</span>
-    //             <StyledArrow>
-    //               <FontAwesomeIcon icon={faArrowRight} />
-    //             </StyledArrow>
-    //           </StyledLink>
-    //         </Category> */}
-    //       </CategoryWrapper>
-    //     )})}
-    //   </CategoriesWrapper>
-    // </section>
- // );
 
-//  return (
-//   <div>
-  
-// </div>
-//  )
 
 
   }

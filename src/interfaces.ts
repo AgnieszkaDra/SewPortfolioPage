@@ -69,6 +69,32 @@ export interface CategoryProps {
    features?: string[];
  }
 
+ export interface ProductAction {
+   type: string;
+   payload: Products;
+ }
+
+//  export interface ProductState {
+//    productsElements: Products;
+//    productsElementsCategories: string[];
+//  }
+
+export interface ProductsState {
+   productsElements: { [key: number]: Product };
+   productsElementsCategories: object; 
+ }
+
+ interface Product {
+   id: number;
+   name: string;
+   imageBackground: string;
+   imagesCarousel: string[];
+   price: number;
+   collectionMain: string;
+   collectionType: string;
+   features?: string[];
+ }
+
 export interface ProductProps {
    index?: number;
    item: Item ;
@@ -79,6 +105,10 @@ export interface ProductProps {
    };
    
 }
+
+export interface AppState {
+   productReducer: ProductsState;
+ }
  
 export interface ProductData {
    images?: string[];
