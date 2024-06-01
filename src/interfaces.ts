@@ -1,3 +1,13 @@
+export interface AppState {
+   productsElementsCategories: ProductsState;
+   productsElements: ProductsState;
+}
+
+export interface ProductsState {
+   productsElements: { [key: number]: Product };
+   productsElementsCategories: object; 
+}
+
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200, SKIRTS = 300 }
 import { CSSProperties } from 'react';
 
@@ -79,10 +89,10 @@ export interface CategoryProps {
 //    productsElementsCategories: string[];
 //  }
 
-export interface ProductsState {
-   productsElements: { [key: number]: Product };
-   productsElementsCategories: object; 
- }
+// export interface ProductsState {
+//    productsElements: { [key: number]: Product };
+//    productsElementsCategories: object; 
+// }
 
  interface Product {
    id: number;
@@ -106,14 +116,13 @@ export interface ProductProps {
    
 }
 
-export interface AppState {
-   productsElementsCategories: ProductsState;
-   productsElements: ProductsState;
- }
+// export interface AppState {
+//    productsElementsCategories: ProductsState;
+//    productsElements: ProductsState;
+// }
  
 export interface ProductData {
    images?: string[];
-
 }
 
 export interface CarouselProps {

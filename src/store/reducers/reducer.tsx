@@ -1,13 +1,18 @@
 
 import { SET_PRODUCTS } from '../actions/actionTypes';
 import { SET_CATEGORIES } from '../actions/actionTypes';
-import { Products, ProductAction, ProductsState, ProductItem } from '../../interfaces';
+import { Products, ProductItem } from '../../interfaces';
 
 
-const initialState: ProductsState = {
+// const initialState: ProductsState = {
+//     productsElements: {},
+//     productsElementsCategories: {},
+// };
+
+const initialState = {
     productsElements: {},
     productsElementsCategories: {},
-  };
+};
 
 const filterUniqueCollectionTypes = (products: Products): { [key: string]: ProductItem } => {
     const uniqueCollectionTypes: { [key: string]: ProductItem } = {};
@@ -25,7 +30,7 @@ const filterUniqueCollectionTypes = (products: Products): { [key: string]: Produ
 };
 
 
-  const productReducer = (state = initialState, action: ProductAction): ProductsState => {
+  const productReducer = (state = initialState, action: { type: unknown; payload: Products })=> {
     switch (action.type) {
       case SET_PRODUCTS:
         return {

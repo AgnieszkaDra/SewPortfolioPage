@@ -106,39 +106,36 @@ const CategoriesContainer = () => {
 
 //  const products2 = useSelector((state) => state.productsElements)
 //  const categories = useSelector((state) => state.productsElementsCategories)
- const categories = useSelector((state: AppState) => state.productsElementsCategories);
+  const categories = useSelector((state: AppState) => state.productsElementsCategories);
   const categoriesProducts = Object.values(categories).map(product => product)
 
-return (
-  <section style={{ width: '100%', position: 'relative' }}>
- <CategoriesWrapper>
-   {categoriesProducts.map((product) => {
-   return (
-          <CategoryWrapper
-            key={product.id}
-           style={{ backgroundImage: `url(${product.imageBackground})`, opacity: '0.7' }}
-      >
-            <Category>
-            <h2 style={{ fontWeight: 700 }}>{product.name}</h2>
-              <StyledLink to={`/category/${product.name}`}>
-                <span className={'span'}>Zobacz produkty</span>
-                <StyledArrow>
-                   <FontAwesomeIcon icon={faArrowRight} />
-               </StyledArrow>
-             </StyledLink>
-            </Category>
-         </CategoryWrapper>
-     
-        )})}
-   
-</CategoriesWrapper>
-  </section>
-)
+  return (
+    <section style={{ width: '100%', position: 'relative' }}>
+      <CategoriesWrapper>
+        { categoriesProducts.map((product) => {
+        return (
+              <CategoryWrapper
+                key={product.id}
+                style={{ backgroundImage: `url(${product.imageBackground})`, opacity: '0.7' }}
+              >
+                <Category>
+                  <h2 style={{ fontWeight: 700 }}>{product.name}</h2>
+                    <StyledLink to={`/category/${product.name}`}>
+                      <span className={'span'}>Zobacz produkty</span>
+                      <StyledArrow>
+                        <FontAwesomeIcon icon={faArrowRight} />
+                    </StyledArrow>
+                  </StyledLink>
+                </Category>
+              </CategoryWrapper>
+              )
+            })
+          }
+      </CategoriesWrapper>
+    </section>
+  )
 
-
-
-
-  }
+}
 
 export default CategoriesContainer;
 
