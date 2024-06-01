@@ -29,14 +29,14 @@ import whale1a from '../assets/AreaOfChild/Complets/whale/whale.1a.jpg'
 import whale1b from '../assets/AreaOfChild/Complets/whale/whale.1b.jpg'
 import whale1c from '../assets/AreaOfChild/Complets/whale/whale.1c.jpg'
 import whale1d from '../assets/AreaOfChild/Complets/whale/whale.1d.jpg'
-import cherry1a from '../assets/AreaOfChild/Skirts and Dresses/Cherry/cherry.1a.jpg'
-import cherry1b from '../assets/AreaOfChild/Skirts and Dresses/Cherry/cherry.1b.jpg'
-import cherry1c from '../assets/AreaOfChild/Skirts and Dresses/Cherry/cherry.1c.jpg'
-import fairy1a from '../assets/AreaOfChild/Skirts and Dresses/Fairy/fairy.1a.jpg'
-import fairy1b from '../assets/AreaOfChild/Skirts and Dresses/Fairy/fairy.1b.jpg'
-import hearts1a from '../assets/AreaOfChild/Skirts and Dresses/Hearts/hearts.1a.jpg'
-import hearts1b from '../assets/AreaOfChild/Skirts and Dresses/Hearts/hearts.1b.jpg'
-import hearts1c from '../assets/AreaOfChild/Skirts and Dresses/Hearts/hearts.1c.jpg'
+import cherry1a from '../assets/AreaOfChild/Skirts/Cherry/cherry.1a.jpg'
+import cherry1b from '../assets/AreaOfChild/Skirts/Cherry/cherry.1b.jpg'
+import cherry1c from '../assets/AreaOfChild/Skirts/Cherry/cherry.1c.jpg'
+import fairy1a from '../assets/AreaOfChild/Skirts/Fairy/fairy.1a.jpg'
+import fairy1b from '../assets/AreaOfChild/Skirts/Fairy/fairy.1b.jpg'
+import hearts1a from '../assets/AreaOfChild/Skirts/Hearts/hearts.1a.jpg'
+import hearts1b from '../assets/AreaOfChild/Skirts/Hearts/hearts.1b.jpg'
+import hearts1c from '../assets/AreaOfChild/Skirts/Hearts/hearts.1c.jpg'
 import trousers1a from '../assets/AreaOfChild/Trousers/trousers.1a.jpg'
 import trousers1b from '../assets/AreaOfChild/Trousers/trousers.1b.jpg'
 import trousers1c from '../assets/AreaOfChild/Trousers/trousers.1c.jpg'
@@ -272,4 +272,4 @@ export const products: Products = {
   }
 }
 
-  export default products
+export default products

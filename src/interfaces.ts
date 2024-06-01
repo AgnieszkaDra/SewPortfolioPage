@@ -67,6 +67,8 @@ export interface CategoryProps {
  export interface Products {
    [key: number]: ProductItem;
  }
+
+ export type CollectionType = "Bluzy" | "Spodnie" | "Komplety" | "Spódnice i sukienki" | "Akcesoria";
  
  export interface ProductItem {
    id: number;
@@ -75,7 +77,7 @@ export interface CategoryProps {
    imagesCarousel: string[];
    price: number;
    collectionMain: string;
-   collectionType: string;
+   collectionType: CollectionType;
    features?: string[];
  }
 

@@ -1,13 +1,7 @@
 
 import { SET_PRODUCTS } from '../actions/actionTypes';
 import { SET_CATEGORIES } from '../actions/actionTypes';
-import { Products, ProductItem } from '../../interfaces';
-
-
-// const initialState: ProductsState = {
-//     productsElements: {},
-//     productsElementsCategories: {},
-// };
+import { Products, ProductItem, CollectionType } from '../../interfaces';
 
 const initialState = {
     productsElements: {},
@@ -15,18 +9,20 @@ const initialState = {
 };
 
 const filterUniqueCollectionTypes = (products: Products): { [key: string]: ProductItem } => {
-    const uniqueCollectionTypes: { [key: string]: ProductItem } = {};
-    const seenCollectionTypes = new Set<string>();
-    
-    for (const key in products) {
-        const product = products[key];
-        if (product.collectionType && !seenCollectionTypes.has(product.collectionType)) {
-            uniqueCollectionTypes[product.collectionType] = product;
-            seenCollectionTypes.add(product.collectionType);
-        }
-    }
+   
+  const categoriesTypesAll = Object.values(products).map(category => category.collectionType)
+  const categoriesTypesSelected = new Set(categoriesTypesAll);
 
-    return uniqueCollectionTypes;
+  const findProductByCollectionType = (products: Products, collectionType: CollectionType): ProductItem=> {
+    return Object.values(products).find(product => product.collectionType === collectionType);
+  };
+
+  const selectedProducts: { [key: string]: ProductItem } = {};
+  categoriesTypesSelected.forEach((collectionType) => {
+    selectedProducts[collectionType] = findProductByCollectionType(products, collectionType);
+  });
+
+  return selectedProducts
 };
 
 

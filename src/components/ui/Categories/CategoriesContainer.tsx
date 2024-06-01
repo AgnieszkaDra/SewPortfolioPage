@@ -119,7 +119,7 @@ const CategoriesContainer = () => {
                 style={{ backgroundImage: `url(${product.imageBackground})`, opacity: '0.7' }}
               >
                 <Category>
-                  <h2 style={{ fontWeight: 700 }}>{product.name}</h2>
+                  <h2 style={{ fontWeight: 700 }}>{product.collectionType}</h2>
                     <StyledLink to={`/category/${product.name}`}>
                       <span className={'span'}>Zobacz produkty</span>
                       <StyledArrow>
