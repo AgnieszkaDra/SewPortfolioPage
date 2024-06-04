@@ -7,6 +7,9 @@ import Box from '@mui/material/Box';
 import { IoMdClose } from "react-icons/io";
 import styled from 'styled-components';
 import products from '../../../data/products.ts';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCategories, setProducts, setCategoryProducts } from '../../../store/actions/actions.tsx';
+import { AppState } from '../../../interfaces.ts';
 
 const ProductsContainer = () => {
   
@@ -119,6 +122,19 @@ const ProductDescription = styled.div`
     setIsLoaded(true); 
   }, []);
 
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+
+    dispatch(setProducts(products))
+    dispatch(setCategories(products));
+    if (categoryName) {
+      dispatch(setCategoryProducts(products, categoryName));
+    }
+  }, [dispatch,  categoryName]);
+
+  const productsOfCategory = useSelector((state: AppState) => state.productsOfCategory);
+  
   return (
     <section style={{ width: '100%', position: 'relative' }}>
       <ProductsWrapper>
@@ -127,15 +143,16 @@ const ProductDescription = styled.div`
           <h5> Strona główna /  {product?.name} </h5>
         </StyledLink>
         <ProductsList isLoaded={isLoaded}>
-          { product?.items?.map((item: object, index: number) => (
-            <Product 
-              key={index}  
-              index={index} 
-              item={item}
-              editable={false}
-              onClick={() => handleOpenProduct(item)}
-              displayedProductSettings= {displayedProductSettings}
-            />
+          {productsOfCategory &&
+            Object.values(productsOfCategory).map((item: object, index: number) => (
+              <Product
+                key={index}
+                index={index}
+                item={item}
+                editable={false}
+                onClick={() => handleOpenProduct(item)}
+                displayedProductSettings={displayedProductSettings}
+              />
             ))}
         </ProductsList>
         { showProduct && selectedItem && (

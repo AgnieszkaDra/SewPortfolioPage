@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { AppState } from '../../../interfaces.ts';
 import products from '../../../data/products.ts';
-import { setCategories, setProducts } from '../../../store/actions/actions.tsx';
+import { setCategories, setProducts, setLinkPath } from '../../../store/actions/actions.tsx';
 import styled from 'styled-components';
 
 const CategoriesWrapper = styled.ul`
@@ -109,6 +109,10 @@ const CategoriesContainer = () => {
   const categories = useSelector((state: AppState) => state.productsElementsCategories);
   const categoriesProducts = Object.values(categories).map(product => product)
 
+  const handleLinkClick = (path: string) => {
+    dispatch(setLinkPath(path));
+};
+
   return (
     <section style={{ width: '100%', position: 'relative' }} >
       <CategoriesWrapper>
@@ -120,7 +124,10 @@ const CategoriesContainer = () => {
               >
                 <Category>
                   <h2 style={{ fontWeight: 700 }}>{product.collectionType}</h2>
-                    <StyledLink to={`/category/${product.collectionType}`}>
+                    <StyledLink 
+                      to={`/category/${product.collectionType}`}
+                      onClick={() => handleLinkClick(`/category/${product.collectionType}`)}
+                    >
                       <span className={'span'}>Zobacz produkty</span>
                       <StyledArrow>
                         <FontAwesomeIcon icon={faArrowRight} />
