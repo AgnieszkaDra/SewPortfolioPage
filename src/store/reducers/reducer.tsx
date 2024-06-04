@@ -60,12 +60,12 @@ const productReducer = (state = initialState, action: Action) => {
           case SET_CATEGORY_PRODUCTS:
             return {
                 ...state,
-                productsOfCategory: filterProductsOfCategory(action.payload, action.collectionType),
+                productsOfCategory: filterProductsOfCategory(action.payload as Products, action.collectionType as string),
             };
       case SET_LINK_PATH: 
           return {
               ...state,
-              linkPath: action.payload,
+              linkPath: action.payload as unknown as string,
           };
       default:
           return state;
