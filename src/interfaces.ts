@@ -1,6 +1,7 @@
 export interface AppState {
    productsElementsCategories: ProductsState;
    productsElements: ProductsState;
+   productsOfCategory: ProductsState
 }
 
 export interface ProductsState {
