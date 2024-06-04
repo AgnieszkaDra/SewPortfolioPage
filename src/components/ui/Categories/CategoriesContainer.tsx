@@ -110,7 +110,7 @@ const CategoriesContainer = () => {
   const categoriesProducts = Object.values(categories).map(product => product)
 
   return (
-    <section style={{ width: '100%', position: 'relative' }}>
+    <section style={{ width: '100%', position: 'relative' }} >
       <CategoriesWrapper>
         { categoriesProducts.map((product) => {
         return (
@@ -120,7 +120,7 @@ const CategoriesContainer = () => {
               >
                 <Category>
                   <h2 style={{ fontWeight: 700 }}>{product.collectionType}</h2>
-                    <StyledLink to={`/category/${product.name}`}>
+                    <StyledLink to={`/category/${product.collectionType}`}>
                       <span className={'span'}>Zobacz produkty</span>
                       <StyledArrow>
                         <FontAwesomeIcon icon={faArrowRight} />
