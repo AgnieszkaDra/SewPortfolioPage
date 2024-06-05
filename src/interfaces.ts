@@ -44,10 +44,10 @@ export interface NavigationProps {
 }
 
 export interface Item {
-   title?: string;
-   imageBackground?: string;
+   name?: string;
+   imageBackground: string;
    imagesCarousel?: string[];
-   price?: number;
+   price: number;
    index?: number;
    features?: string[];
    collection?: string
@@ -126,7 +126,7 @@ export interface CategoryProps {
 
 export interface ProductProps {
    index?: number;
-   item: Item ;
+   item: Item;
    editable: boolean;
    onClick: (item: Item) => void;
    displayedProductSettings?: {
