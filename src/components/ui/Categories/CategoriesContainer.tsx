@@ -103,9 +103,7 @@ const CategoriesContainer = () => {
     dispatch(setProducts(products))
     dispatch(setCategories(products));
   }, [dispatch]);
-
-//  const products2 = useSelector((state) => state.productsElements)
-//  const categories = useSelector((state) => state.productsElementsCategories)
+  
   const categories = useSelector((state: AppState) => state.productsElementsCategories);
   const categoriesProducts = Object.values(categories).map(product => product)
 

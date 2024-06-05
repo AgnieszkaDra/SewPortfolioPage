@@ -8,13 +8,12 @@ import { IoMdClose } from "react-icons/io";
 import styled from 'styled-components';
 import products from '../../../data/products.ts';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCategories, setProducts, setCategoryProducts } from '../../../store/actions/actions.tsx';
-import { AppState } from '../../../interfaces.ts';
+import { setCategoryProducts } from '../../../store/actions/actions.tsx';
+import { AppState, Item } from '../../../interfaces.ts';
 
 const ProductsContainer = () => {
   
   const { categoryName } = useParams()
-  const product = Object.values(products).find(category => category.name === categoryName);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isDisplayingProduct, setIsDisplayingProduct] = useState(false);
   const displayedProductSettings = { setIsDisplayingProduct,  isDisplayingProduct};
@@ -22,101 +21,144 @@ const ProductsContainer = () => {
   
   const ProductsWrapper = styled.div`
     color: ${({ theme }) => theme.colors.text};
+    padding: 20px;
   `;
 
-const StyledLink = styled(RouterLink)`
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.textLight};
-  text-decoration: none;
-`;
+  const StyledLink = styled(RouterLink)`
+    font-size: 14px;
+    color: ${({ theme }) => theme.colors.textLight};
+    text-decoration: none;
+  `;
 
-const ProductsList = styled.ul<{ isLoaded: boolean }>`
+  const ProductsList = styled.ul<{ isLoaded: boolean }>`
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 30px;
+      padding: 20px 0 20px 0;
+      @media screen and (max-width: 1000px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    
+      @media screen and (max-width: 767px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    
+      @media screen and (max-width: 575px) {
+        grid-template-columns: 1fr;
+      }
+
+      @keyframes slideUp {
+        from {
+            bottom: -100px;
+        }
+    
+        to {
+            bottom: 0;
+        }
+      }
+
+      ${props =>
+        props.isLoaded && `
+        animation: slideUp 2s ease-in-out forwards;
+      `}
+  `;
+
+  const ProductStyle = styled.div`
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
-    padding: 20px;
-    @media screen and (max-width: 1000px) {
-      grid-template-columns: repeat(3, 1fr);
+    height: 100vh;
+    position: relative;
+    opacity: 1;
+  `
+
+  const ProductImage = styled.div`
+    width: 100%;
+    @media screen and (min-width: 767px) {
+      width: 50%;
     }
-  
-    @media screen and (max-width: 767px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    @media screen and (max-width: 575px) {
-      grid-template-columns: 1fr;
-    }
-
-    @keyframes slideUp {
-      from {
-          bottom: -100px;
-      }
-  
-      to {
-          bottom: 0;
-      }
-    }
-
-    ${props =>
-      props.isLoaded && `
-      animation: slideUp 2s ease-in-out forwards;
-    `}
-`;
-
-const ProductStyle = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-color: ${({ theme }) => theme.colors.smokeWhite};
-  position: relative
-`
-
-const ProductImage = styled.div`
-  width: 50%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-`
-
-const IconCloseWrapper = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: ${({ theme }) => theme.colors.veryLightGrey};
-  padding: 15px;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  svg {
-    width:100%;
     height: 100%;
-  }
-`;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  `
 
-const IconClose = styled(IoMdClose)`
-  color: ${({ theme }) => theme.colors.text};
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.smokeWhite};
-  padding: 2px;
-  height: 100%;
-`;
+  const IconCloseWrapper = styled.div`
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: ${({ theme }) => theme.colors.white};
+    opacity: .65;
+    border-radius: 100%;
+    border: 9px solid transparent;
+    border-radius: 100%;
+    width: 36px;
+    height: 36px;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  `;
 
-const BoxStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  display: 'flex',
-  width: '960px',
-  height:'90%',
-  p: 4,
-}
+  const IconClose = styled(IoMdClose)`
+    color: ${({ theme }) => theme.colors.text};
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+  `;
 
-const ProductDescription = styled.div`
-  padding-left: 45px;
-`;
+  const ProductTitle = styled.h1`
+    font-size: 1.5rem;
+    color: ${({ theme }) => theme.colors.text};
+  `;
+
+  const StyledBox = styled(Box)`
+    width: 100%;
+    @media screen and (min-width: 767px) {
+      max-width: 960px;
+    }
+    margin: auto;
+    height: 100%;
+    background-color: ${({ theme }) => theme.colors.smokeWhite};
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 767px) {
+      flex-direction: row;
+    }
+  `;
+
+  const ProductDescription = styled.div`
+    padding: 30px 45px 45px;
+  `;
+
+  const ProductPrice = styled.p`
+    font-size: 18px;
+    color: ${({ theme }) => theme.colors.textLight};
+    margin: 0 10px 10px 0;
+  `;
+
+  const ProductFeaturesWrapper = styled.div`
+    font-size: 18px;
+    color: ${({ theme }) => theme.colors.textLight};
+  `;
+
+  const ProductFeaturesList = styled.ul`
+    list-style: disc;
+    margin-bottom: 28px;
+    padding-left: 1.3em;
+    margin-left: .7em;
+  `;
+
+  const ProductFeature = styled.li`
+    font-size: 18px;
+    color: ${({ theme }) => theme.colors.textLight};
+  `;
+
+  const ProductOrder = styled.p`
+    font-size: 18px;
+    color: ${({ theme }) => theme.colors.textLight};
+    font-style: italic;
+  `;
+
 
   useEffect(() => {
     setIsLoaded(true); 
@@ -125,26 +167,23 @@ const ProductDescription = styled.div`
   const dispatch = useDispatch()
 
   useEffect(() => {
-
-    dispatch(setProducts(products))
-    dispatch(setCategories(products));
     if (categoryName) {
       dispatch(setCategoryProducts(products, categoryName));
     }
   }, [dispatch,  categoryName]);
 
   const productsOfCategory = useSelector((state: AppState) => state.productsOfCategory);
-  
+ 
   return (
     <section style={{ width: '100%', position: 'relative' }}>
       <ProductsWrapper>
-        <h1 style={{ textAlign: 'center' }}>{product?.name}</h1>
+        <h1 style={{ textAlign: 'center' }}>{categoryName}</h1>
         <StyledLink to={`/`}>
-          <h5> Strona główna /  {product?.name} </h5>
+          <h5> Strona główna / {categoryName} </h5>
         </StyledLink>
         <ProductsList isLoaded={isLoaded}>
           {productsOfCategory &&
-            Object.values(productsOfCategory).map((item: object, index: number) => (
+            Object.values(productsOfCategory).map((item: Item, index: number) => (
               <Product
                 key={index}
                 index={index}
@@ -164,22 +203,31 @@ const ProductDescription = styled.div`
               aria-describedby="modal-modal-description"
             >
               <ProductStyle>
-                <Box sx={ BoxStyle }>
+                <StyledBox>
                   <ProductImage style={{ backgroundImage: `url(${ selectedItem.imageBackground })`}}>
                   </ProductImage>
                   <ProductDescription>
                     <IconCloseWrapper onClick={ handleCloseProduct }>
                       <IconClose />
                     </IconCloseWrapper>
-                    <h1>{ selectedItem.title }</h1>
-                    <p>{ selectedItem.price }</p>
-                    <div>
-                      <ul>
-                        <li>{ selectedItem.feature }</li>
-                      </ul> 
-                    </div>
+                    <ProductTitle>
+                      { selectedItem.name }
+                    </ProductTitle>
+                    <ProductPrice>
+                      { selectedItem.price }zł
+                    </ProductPrice>
+                    <ProductFeaturesWrapper>
+                      <ProductFeaturesList>
+                        { selectedItem.features?.map((feature: string, index: number) => (
+                          <ProductFeature key={index}>{feature}</ProductFeature>
+                        ))}
+                      </ProductFeaturesList>
+                    </ProductFeaturesWrapper>
+                    <ProductOrder>
+                      Produkty dostępne na stronie mają nieco dłuższy czas realizacji, niż w zwykłym sklepie, ponieważ są produktami szytymi na Twoje zamówienie.
+                    </ProductOrder>
                   </ProductDescription>
-                </Box>
+                </StyledBox>
               </ProductStyle>
             </Modal>
           </>

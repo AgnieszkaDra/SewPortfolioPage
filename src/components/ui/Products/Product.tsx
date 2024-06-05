@@ -68,7 +68,7 @@ return (
       <img src={item.imageBackground} alt={`Image ${index}`} /> 
     </figure>
     <CaptionWrapper>
-      <h3>{item.title}</h3>
+      <h3>{item.name}</h3>
       <span>{item.price}zł </span>
     </CaptionWrapper>
   </ProductWrapper>
