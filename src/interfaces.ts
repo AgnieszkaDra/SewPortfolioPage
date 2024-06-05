@@ -1,12 +1,28 @@
-export interface AppState {
+// export interface AppState {
+//    productsElementsCategories: object;
+//    productsElements: string;
+//    productsOfCategory: object;
+//    linkPath: string;
+// }
+
+// export interface AppState  {
+//    productsElementsCategories: [];
+//    productsElements: string;
+//    productsOfCategory: [];
+//    linkPath: '',
+//  }
+
+ export interface AppState {
    productsElementsCategories: ProductsState;
    productsElements: ProductsState;
-   productsOfCategory: ProductsState
+   productsOfCategory: ProductsState;
+   linkPath: '',
 }
 
 export interface ProductsState {
    productsElements: { [key: number]: Product };
    productsElementsCategories: object; 
+   productsOfCategory: object;
 }
 
 enum Collection { BASIC = 5, MOTHER__AND__CHILD = 10, ACCESSORIES = 200, SKIRTS = 300 }
