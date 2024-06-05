@@ -5,10 +5,10 @@ import { SET_CATEGORY_PRODUCTS, SET_LINK_PATH } from '../actions/actionTypes';
 import { Products, ProductItem, CollectionType } from '../../interfaces';
 
 const initialState = {
-    productsElements: {},
-    productsElementsCategories: {},
-    productsofCategory: {},
-    linkPath: ''  
+  productsElements: {},
+  productsElementsCategories: {},
+  productsofCategory: {},
+  linkPath: ''  
 };
 
 const filterUniqueCollectionTypes = (products: Products): { [key: string]: ProductItem } => {
@@ -40,10 +40,9 @@ const filterProductsOfCategory = (products: Products, collectionType: string): {
 
 interface Action {
   type: string;
-  payload: Products;
+  payload: Products | string;
   collectionType: string ;
 }
-
 
 const productReducer = (state = initialState, action: Action) => {
   switch (action.type) {
@@ -55,7 +54,7 @@ const productReducer = (state = initialState, action: Action) => {
       case SET_CATEGORIES:
           return {
               ...state,
-              productsElementsCategories: filterUniqueCollectionTypes(action.payload),
+              productsElementsCategories: filterUniqueCollectionTypes(action.payload as Products),
           };
           case SET_CATEGORY_PRODUCTS:
             return {
@@ -65,7 +64,7 @@ const productReducer = (state = initialState, action: Action) => {
       case SET_LINK_PATH: 
           return {
               ...state,
-              linkPath: action.payload as unknown as string,
+              linkPath: action.payload as string,
           };
       default:
           return state;
