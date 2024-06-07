@@ -114,6 +114,9 @@ const ProductsContainer = () => {
   const StyledBox = styled(Box)`
     width: 100%;
     @media screen and (min-width: 767px) {
+      max-width: 560px;
+    }
+    @media screen and (min-width: 960px) {
       max-width: 960px;
     }
     margin: auto;
@@ -127,7 +130,9 @@ const ProductsContainer = () => {
   `;
 
   const ProductDescription = styled.div`
+    position: relative;
     padding: 30px 45px 45px;
+    width: 50%;
   `;
 
   const ProductPrice = styled.p`
