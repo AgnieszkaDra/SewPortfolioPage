@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import Navigation from '../../ui/Navigation/Navigation';
 import Carousel from '../../ui/Carousel/Carousel';
@@ -38,6 +39,8 @@ const NavigationWrapper = styled.div`
 
 const Header  = () => {
   const { navbarOpen, toggleNavbar } = useToggleNavbar();
+  const location = useLocation();
+  const showCarousel = location.pathname === '/' || location.pathname === '/category';
   return (
     <HeaderWrapper>
       <NavigationWrapper>
@@ -55,7 +58,7 @@ const Header  = () => {
           </HamburgerWrapper>
         ) }
       </NavigationWrapper>
-      <Carousel images={carousel} />
+      {showCarousel && <Carousel images={carousel} />}
     </HeaderWrapper>
   );
 };
