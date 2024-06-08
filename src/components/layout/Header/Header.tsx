@@ -6,7 +6,7 @@ import carousel from '../../../data/carousel';
 import { useToggleNavbar } from '../../../hooks/useNavbar';
 import styled from 'styled-components';
 
-const HamburgerWrapper = styled.div<{ navbarOpen: boolean }>`
+const HamburgerWrapper = styled.div<{ isNavbarOpen: boolean }>`
   height: 26px;
   width: 32px;
   position: absolute;
@@ -22,19 +22,15 @@ const HamburgerWrapper = styled.div<{ navbarOpen: boolean }>`
   }
 `;
 
-const HeaderWrapper = styled.header`
-  height: 100vh;
-  position: relative;
-  color: ${({ theme }) => theme.colors.text};
-`;
-
-const NavigationWrapper = styled.div`
-  width: 100%;
+const HeaderWrapper = styled.header<{ isShowCarousel: boolean }>`
   height: 10vh;
   position: relative;
-  display: flex;
-  z-index: 2;
-  background-color: transparent;
+  color: ${({ theme }) => theme.colors.text};
+  ${props =>
+    props.isShowCarousel && `
+    height: 100vh;
+    background-color: transparent;
+  `}
 `;
 
 const Header  = () => {
@@ -42,22 +38,21 @@ const Header  = () => {
   const location = useLocation();
   const showCarousel = location.pathname === '/' || location.pathname === '/category';
   return (
-    <HeaderWrapper>
-      <NavigationWrapper>
-        { navbarOpen ? (
-          <Navigation 
-            isNavbarOpen={navbarOpen} 
-            onClick={toggleNavbar}
-          />
-        ) : (
-          <HamburgerWrapper 
-            navbarOpen={navbarOpen} 
-            onClick={toggleNavbar}
-          >
-            <GiHamburgerMenu />
-          </HamburgerWrapper>
-        ) }
-      </NavigationWrapper>
+    <HeaderWrapper isShowCarousel={showCarousel}>
+      <Navigation 
+        isNavbarOpen={navbarOpen} 
+        onClick={toggleNavbar}
+      />
+      { !navbarOpen ? (
+        <HamburgerWrapper 
+          isNavbarOpen={navbarOpen} 
+          onClick={toggleNavbar}
+        >
+          <GiHamburgerMenu />
+        </HamburgerWrapper>
+      )
+      : ('')
+      }
       {showCarousel && <Carousel images={carousel} />}
     </HeaderWrapper>
   );
