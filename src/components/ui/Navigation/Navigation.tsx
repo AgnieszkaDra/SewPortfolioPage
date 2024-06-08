@@ -5,16 +5,31 @@ import { IoMdClose } from "react-icons/io";
 import { useToggleNavbar } from '../../../hooks/useNavbar';
 
 const NavigationWrapper = styled.nav<{ isOpen: boolean }>`
-  background-color: ${({ theme }) => theme.colors.smokeWhite};
-  width: 100%;
-  min-height: 100vh;
-  ${props =>
-    props.isOpen && `
+  ${({ isOpen, theme }) =>
+    isOpen && `
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row; 
+    background-color: ${theme.colors.smokeWhite};
+    @media screen and (max-width: 575px) {
+      flex-direction: column;
+    }
+  `}
+  ${({ isOpen }) =>
+    !isOpen && `
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 10vh;
     display: flex;
     flex-direction: row; 
+    background-color: transparent;
     z-index: 3;
     @media screen and (max-width: 575px) {
       flex-direction: column;
@@ -28,8 +43,7 @@ const IconCloseWrapper = styled.div<{ navbarOpen: boolean }>`
   left: 0px;
   background-color: ${({ theme }) => theme.colors.veryLightGrey};
   padding: 15px;
-  min-height: 100vh;
-  z-index: 3;
+  border: 3px solid pink;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
