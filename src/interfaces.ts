@@ -38,11 +38,6 @@ export interface Image {
    image: string
 }
 
-export interface NavigationProps {
-   isNavbarOpen?: boolean;
-   onClick?: () => void;
-}
-
 export interface Item {
    name?: string;
    imageBackground: string;
