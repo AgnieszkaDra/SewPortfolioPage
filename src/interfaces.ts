@@ -81,7 +81,7 @@ export interface CategoryProps {
  }
 
  export type CollectionType = "Bluzy" | "Spodnie" | "Komplety" | "Spódnice i sukienki" | "Akcesoria";
- 
+ export type CollectionMain = "Dziecko" | "CHILD" | "WOMAN" ;
  export interface ProductItem {
    id: number;
    name: string;
