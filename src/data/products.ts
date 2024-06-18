@@ -60,7 +60,6 @@ import cap2c from '../assets/AreaOfChild/Accessories/cap.2c.jpg'
 import forestBag1a from '../assets/AreaOfChild/Accessories/forest-bag.1a.jpg'
 import forestBag1b from '../assets/AreaOfChild/Accessories/forest-bag.1b.jpg'
 import forestBag1c from '../assets/AreaOfChild/Accessories/forest-bag.1c.jpg'
-
 export const products: Products = {
   1: {
     id: 1,
@@ -68,7 +67,7 @@ export const products: Products = {
     imageBackground: ball1a,
     imagesCarousel: [ball1a, ball1b],
     price: 100,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Bluzy',
     features:  [ 'bluza wykonana z bawełny', 'luźny krój', 'ciepła' ]
   },
@@ -78,7 +77,7 @@ export const products: Products = {
     imageBackground: rabbit1a,
     imagesCarousel: [rabbit1a, rabbit1b, rabbit1c,  rabbit1d, rabbit1e, rabbit1f, rabbit2a, rabbit2b, rabbit2c],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Bluzy',
   },
   3: {
@@ -87,7 +86,7 @@ export const products: Products = {
     imageBackground: skateboards1a,
     imagesCarousel: [skateboards1a, skateboards1b, skateboards1c,  skateboards1d, skateboards1e ],
     price: 150,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Bluzy',
   },
   4: {
@@ -96,7 +95,7 @@ export const products: Products = {
     imageBackground: violet1a,
     imagesCarousel: [violet1a, violet1b, violet1c],
     price: 65,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Bluzy',
   },
   5: {
@@ -105,7 +104,7 @@ export const products: Products = {
     imageBackground: wolf1a,
     imagesCarousel: [wolf1a, wolf1b, wolf1c, wolf1d],
     price: 78,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Bluzy',
   },
   6: {
@@ -114,7 +113,7 @@ export const products: Products = {
     imageBackground: violetComplet1a,
     imagesCarousel: [violetComplet1a, violetComplet1b, violetComplet1c],
     price: 100,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Komplety',
   },
   7: {
@@ -123,7 +122,7 @@ export const products: Products = {
     imageBackground: whale1a,
     imagesCarousel: [whale1a, whale1b, whale1c, whale1d],
     price: 100,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Komplety',
   },
   8: {
@@ -132,7 +131,7 @@ export const products: Products = {
     imageBackground: cherry1b,
     imagesCarousel: [cherry1a, cherry1b, cherry1c],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spódnice i sukienki',
   },
   9: {
@@ -141,7 +140,7 @@ export const products: Products = {
     imageBackground: fairy1a,
     imagesCarousel: [fairy1a, fairy1b],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spódnice i sukienki'
   },
   10: {
@@ -150,7 +149,7 @@ export const products: Products = {
     imageBackground: hearts1a,
     imagesCarousel: [hearts1a, hearts1b, hearts1c],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spódnice i sukienki'
   },
   11: {
@@ -159,7 +158,7 @@ export const products: Products = {
     imageBackground: trousersViolet1a,
     imagesCarousel: [trousersViolet1a, trousersViolet1b],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spodnie'
   },
   12: {
@@ -168,7 +167,7 @@ export const products: Products = {
     imageBackground: trousersWithRabbit1a,
     imagesCarousel: [trousersWithRabbit1a, trousersWithRabbit1b, trousersWithRabbit1c],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spodnie'
   },
   13: {
@@ -177,7 +176,7 @@ export const products: Products = {
     imageBackground: trousers1a,
     imagesCarousel: [trousers1a],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spodnie'
   },
   14: {
@@ -186,7 +185,7 @@ export const products: Products = {
     imageBackground: trousers1b,
     imagesCarousel: [trousers1b],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spodnie'
   },
   15: {
@@ -195,7 +194,7 @@ export const products: Products = {
     imageBackground: trousers1c,
     imagesCarousel: [trousers1c],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spodnie'
   },
   16: {
@@ -204,7 +203,7 @@ export const products: Products = {
     imageBackground: trousers1d,
     imagesCarousel: [trousers1d],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spodnie'
   },
   17: {
@@ -213,7 +212,7 @@ export const products: Products = {
     imageBackground: trousers1e,
     imagesCarousel: [trousers1e],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spodnie'
   },
   18: {
@@ -222,7 +221,7 @@ export const products: Products = {
     imageBackground: trousers1f,
     imagesCarousel: [trousers1f],
     price: 90,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Spodnie'
   },
   19: {
@@ -231,7 +230,7 @@ export const products: Products = {
     imageBackground: cap1a,
     imagesCarousel: [cap1a, cap1b],
     price: 100,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Komplety'
   },
   20: {
@@ -240,7 +239,7 @@ export const products: Products = {
     imageBackground: cap2a,
     imagesCarousel: [cap2a, cap2b, cap2c],
     price: 120,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Akcesoria'
   },
   21: {
@@ -249,7 +248,7 @@ export const products: Products = {
     imageBackground: forestBag1a,
     imagesCarousel: [forestBag1a, forestBag1b, forestBag1c],
     price: 50,
-    collectionMain: 'CHILD',
+    collectionMain: 'Dziecko',
     collectionType: 'Akcesoria'
   },
   22: {
@@ -258,7 +257,7 @@ export const products: Products = {
     imageBackground: band1,
     imagesCarousel: [band1, band2],
     price: 60,
-    collectionMain: 'WOMAN',
+    collectionMain: 'Kobieta',
     collectionType: 'Akcesoria'
   },
   23: {
@@ -267,7 +266,7 @@ export const products: Products = {
     imageBackground: completBand1,
     imagesCarousel: [completBand1, completBand2],
     price: 90,
-    collectionMain: 'WOMAN',
+    collectionMain: 'Kobieta',
     collectionType: 'Akcesoria'
   }
 }
