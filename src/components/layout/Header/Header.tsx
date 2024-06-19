@@ -1,4 +1,3 @@
-// import { useLocation } from 'react-router-dom';
 import Navigation from '../../ui/Navigation/Navigation';
 import styled from 'styled-components';
 
@@ -9,10 +8,6 @@ const HeaderWrapper = styled.header`
 `;
 
 const Header  = () => {
- 
-  // const location = useLocation();
-  // const showCarousel = location.pathname === '/' || location.pathname === '/category';
-  // const showNavigation = location.pathname === '/' || location.pathname === '/category';
   return (
     <HeaderWrapper>
       <Navigation />
