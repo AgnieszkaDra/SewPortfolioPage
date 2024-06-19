@@ -2,9 +2,11 @@ import { createBrowserRouter, createRoutesFromElements, Route, Outlet } from 're
 import {
   Home,
   Main,
-	CategoriesContainer,
-  ProductsContainer,
 } from './components/';
+import {
+  CategoriesContainer,
+  ProductsContainer,
+} from './pages/';
 
 const router = createBrowserRouter(
     createRoutesFromElements(

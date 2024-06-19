@@ -1,15 +1,15 @@
 import  { useEffect, useState } from 'react';
 import { Link as RouterLink, useParams } from 'react-router-dom';
 import Product from './Product.tsx';
-import { useShowProduct } from '../../../hooks/useShowModal.tsx';
+import { useShowProduct } from '../../hooks/useShowModal.tsx';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { IoMdClose } from "react-icons/io";
 import styled from 'styled-components';
-import products from '../../../data/products.ts';
+import products from '../../data/products.ts';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCategoryProducts } from '../../../store/actions/actions.tsx';
-import { AppState, Item } from '../../../interfaces.ts';
+import { setCategoryProducts } from '../../store/actions/actions.tsx';
+import { AppState, Item } from '../../interfaces.ts'
 
 const ProductsContainer = () => {
   

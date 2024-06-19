@@ -3,9 +3,9 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { AppState } from '../../../interfaces.ts';
-import products from '../../../data/products.ts';
-import { setCategories, setProducts, setLinkPath } from '../../../store/actions/actions.tsx';
+import { AppState } from '../../interfaces.ts'
+import products from '../../data/products.ts';
+import { setCategories, setProducts, setLinkPath } from '../../store/actions/actions.tsx';
 import styled from 'styled-components';
 
 const CategoriesWrapper = styled.ul`

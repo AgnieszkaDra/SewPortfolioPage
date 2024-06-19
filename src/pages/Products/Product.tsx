@@ -1,5 +1,5 @@
 import React, { useState }  from 'react';
-import { ProductProps } from '../../../interfaces';
+import { ProductProps } from '../../interfaces';
 import { IoIosResize } from "react-icons/io";
 import styled from 'styled-components';
 

@@ -1,6 +1,6 @@
 // import { useLocation } from 'react-router-dom';
 import React, { ReactNode } from 'react';
-import CategoriesContainer from "../../ui/Categories/CategoriesContainer";
+import { CategoriesContainer } from '../../../pages';
 import Carousel from '../../ui/Carousel/Carousel';
 import carousel from '../../../data/carousel';
 import styled from 'styled-components';
