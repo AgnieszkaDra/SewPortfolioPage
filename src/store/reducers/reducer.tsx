@@ -30,7 +30,8 @@ const filterUniqueCollectionTypes = (products: Products): { [key: string]: Produ
 };
 
 const filterProductsOfCategory = (products: Products, collectionType: string): { [key: string]: ProductItem } => {
-  const categoryProducts = Object.values(products).filter(product => product.collectionType === collectionType);
+  
+  const categoryProducts = Object.values(products).filter(product => product.collectionType.includes(collectionType));
   const productsOfCategory: { [key: string]: ProductItem } = {};
   categoryProducts.forEach(product => {
       productsOfCategory[product.id] = product;
@@ -39,28 +40,52 @@ const filterProductsOfCategory = (products: Products, collectionType: string): {
   return productsOfCategory;
 };
 
-const filterProductsOfCollectionMain = (products: Products): { [key: string]: ProductItem } => {
-  const collectionTypesAll = Object.values(products).map(category => category.collectionMain)
-  const collectionTypesSelected = new Set(collectionTypesAll);
+const filterProductsOfCollectionMain = (products: Products, collectionName: string): { [key: string]: ProductItem } => {
+  console.log(collectionName)
+  // Get all collectionMain values from products
+  const collectionTypesAll = Object.values(products).map(category => category.collectionMain);
   
-  const findProductByCollectionType = (products: Products, collectionMain: CollectionMain): ProductItem=> {
+  // Use a Set to filter unique collectionMain values
+  const collectionTypesSelected = new Set(collectionTypesAll);
+
+  // Function to find product by collectionMain
+  const findProductByCollectionType = (products: Products, collectionMain: CollectionMain): ProductItem | undefined => {
     return Object.values(products).find(product => product.collectionMain === collectionMain);
   };
 
+  // Initialize an empty object to store selected products
   const selectedProducts: { [key: string]: ProductItem } = {};
+
+  // Iterate through unique collectionMain values
   collectionTypesSelected.forEach((collectionMain) => {
-    selectedProducts[collectionMain] = findProductByCollectionType(products, collectionMain);
+    // Find product by collectionMain
+    const product = findProductByCollectionType(products, collectionMain);
+    if (product) {
+      // Add product to selectedProducts using collectionMain as key
+      selectedProducts[collectionMain] = product;
+    }
   });
 
-  return selectedProducts
+  // Check if collectionName exists in selectedProducts
+  if (collectionName in selectedProducts) {
+    const desiredObject = selectedProducts[collectionName];
+    console.log(desiredObject);
+  } else {
+    console.log(`Object with key '${collectionName}' not found.`);
+  }
 
+  // Return selectedProducts object
+  return selectedProducts;
 };
+
+
 
 interface Action {
   type: string;
   payload: Products | string;
-  collectionType: string ;
-  collectionMain: string ;
+  collectionType: string;
+  collectionMain: string;
+  collectionName: string;
 }
 
 const productReducer = (state = initialState, action: Action) => {
@@ -83,7 +108,7 @@ const productReducer = (state = initialState, action: Action) => {
       case SET_COLLECTIONS:
         return {
           ...state,
-          productsElementsCollection: filterProductsOfCollectionMain(action.payload as Products),
+          productsElementsCollection: filterProductsOfCollectionMain(action.payload as Products, action.collectionName as string),
         };
       case SET_LINK_PATH: 
           return {

@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link as RouterLink, useParams } from 'react-router-dom';
 import Product from './Product.tsx';
 import { useShowProduct } from '../../hooks/useShowModal.tsx';
@@ -14,6 +14,7 @@ import { AppState, Item } from '../../interfaces.ts'
 const ProductsContainer = () => {
   
   const { categoryName } = useParams()
+  console.log(categoryName)
   const [isLoaded, setIsLoaded] = useState(false);
   const [isDisplayingProduct, setIsDisplayingProduct] = useState(false);
   const displayedProductSettings = { setIsDisplayingProduct,  isDisplayingProduct};
