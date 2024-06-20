@@ -16,6 +16,7 @@
    productsElementsCategories: ProductsState;
    productsElements: ProductsState;
    productsOfCategory: ProductsState;
+   productsElementsCollection: ProductsState;
    linkPath: '',
 }
 
@@ -80,7 +81,7 @@ export interface CategoryProps {
    [key: number]: ProductItem;
  }
 
- export type CollectionType = "Bluzy" | "Spodnie" | "Komplety" | "Spódnice i sukienki" | "Akcesoria";
+ export type CollectionType = "Bluzy" | "Spodnie" | "Komplety" | "Spódnice i sukienki" | "Akcesoria" | "Dziecko" | "Kobieta";
  export type CollectionMain = "Dziecko" | "CHILD" | "WOMAN" ;
  export interface ProductItem {
    id: number;

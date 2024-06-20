@@ -22,9 +22,10 @@ export const setCategoryProducts = (products: Products, collectionType: string )
     collectionType
 });
 
-export const setCollections = (products: Products) => ({
+export const setCollections = (products: Products, collectionName: string) => ({
     type: SET_COLLECTIONS,
     payload: products,
+    collectionName
 });
 
 export const setLinkPath = (path: string) => ({
