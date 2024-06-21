@@ -21,12 +21,12 @@ const filterUniqueCollectionTypes = (products: Products): { [key: string]: Produ
   const categoriesTypesAll = Object.values(productsAll).map(category => category.collectionType)
   const categoriesTypesSelected = new Set(categoriesTypesAll);
  
-
-
-
   const findProductByCollectionType = (products: Products, collectionType: CollectionType): ProductItem => {
-    return Object.values(products).find(product => (product as ProductItem).collectionType?.includes(collectionType)) as ProductItem | undefined;
-
+    const product = Object.values(products).find(product => product.collectionType === collectionType);
+    if (!product) {
+      throw new Error(`Product with collection type ${collectionType} not found`);
+    }
+    return product;
   };
 
   const selectedProducts: { [key: string]: ProductItem } = {};
