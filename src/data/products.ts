@@ -61,6 +61,14 @@ import forestBag1a from '../assets/AreaOfChild/Accessories/forest-bag.1a.jpg'
 import forestBag1b from '../assets/AreaOfChild/Accessories/forest-bag.1b.jpg'
 import forestBag1c from '../assets/AreaOfChild/Accessories/forest-bag.1c.jpg'
 export const products: Products = {
+  All: {
+    name: '(ProductsRoot)',
+    children: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+  },
+  Child: {
+    name: '(ProductsChildRoot)',
+    children: [1,2,3,4,5]
+  },
   1: {
     id: 1,
     name: 'Bluza Ball',
@@ -68,7 +76,7 @@ export const products: Products = {
     imagesCarousel: [ball1a, ball1b],
     price: 100,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
     features:  [ 'bluza wykonana z bawełny', 'luźny krój', 'ciepła' ]
   },
   2: {
@@ -78,7 +86,7 @@ export const products: Products = {
     imagesCarousel: [rabbit1a, rabbit1b, rabbit1c,  rabbit1d, rabbit1e, rabbit1f, rabbit2a, rabbit2b, rabbit2c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
   },
   3: {
     id: 3, 
@@ -87,7 +95,7 @@ export const products: Products = {
     imagesCarousel: [skateboards1a, skateboards1b, skateboards1c,  skateboards1d, skateboards1e ],
     price: 150,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
   },
   4: {
     id: 4,
@@ -96,7 +104,7 @@ export const products: Products = {
     imagesCarousel: [violet1a, violet1b, violet1c],
     price: 65,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
   },
   5: {
     id: 5,
@@ -105,7 +113,7 @@ export const products: Products = {
     imagesCarousel: [wolf1a, wolf1b, wolf1c, wolf1d],
     price: 78,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
   },
   6: {
     id: 6,
@@ -114,7 +122,7 @@ export const products: Products = {
     imagesCarousel: [violetComplet1a, violetComplet1b, violetComplet1c],
     price: 100,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
   },
   7: {
     id: 7,
@@ -123,7 +131,7 @@ export const products: Products = {
     imagesCarousel: [whale1a, whale1b, whale1c, whale1d],
     price: 100,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
   },
   8: {
     id: 8,
@@ -132,7 +140,7 @@ export const products: Products = {
     imagesCarousel: [cherry1a, cherry1b, cherry1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
   },
   9: {
     id: 9, 
@@ -141,7 +149,7 @@ export const products: Products = {
     imagesCarousel: [fairy1a, fairy1b],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Spódnice i sukienki',
   },
   10: {
     id: 10,
@@ -150,7 +158,7 @@ export const products: Products = {
     imagesCarousel: [hearts1a, hearts1b, hearts1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
   },
   11: {
     id: 11,
@@ -159,7 +167,7 @@ export const products: Products = {
     imagesCarousel: [trousersViolet1a, trousersViolet1b],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Spodnie',
   },
   12: {
     id: 12,
@@ -168,7 +176,7 @@ export const products: Products = {
     imagesCarousel: [trousersWithRabbit1a, trousersWithRabbit1b, trousersWithRabbit1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Spodnie',
   },
   13: {
     id: 13, 
@@ -177,7 +185,7 @@ export const products: Products = {
     imagesCarousel: [trousers1a],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Bluzy',
   },
   14: {
     id: 14,
@@ -186,7 +194,7 @@ export const products: Products = {
     imagesCarousel: [trousers1b],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Spodnie',
   },
   15: {
     id: 15,
@@ -195,7 +203,7 @@ export const products: Products = {
     imagesCarousel: [trousers1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Spodnie',
   },
   16: {
     id: 16,
@@ -204,7 +212,7 @@ export const products: Products = {
     imagesCarousel: [trousers1d],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Spodnie',
   },
   17: {
     id: 17,
@@ -213,7 +221,7 @@ export const products: Products = {
     imagesCarousel: [trousers1e],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Spodnie',
   },
   18: {
     id: 18,
@@ -222,7 +230,7 @@ export const products: Products = {
     imagesCarousel: [trousers1f],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Spodnie',
   },
   19: {
     id: 19,
@@ -231,7 +239,7 @@ export const products: Products = {
     imagesCarousel: [cap1a, cap1b],
     price: 100,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Komplety',
   },
   20: {
     id: 20, 
@@ -240,7 +248,7 @@ export const products: Products = {
     imagesCarousel: [cap2a, cap2b, cap2c],
     price: 120,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Akcesoria',
   },
   21: {
     id: 21,
@@ -249,7 +257,7 @@ export const products: Products = {
     imagesCarousel: [forestBag1a, forestBag1b, forestBag1c],
     price: 50,
     collectionMain: 'Dziecko',
-    collectionType: ['Bluzy','Dziecko'],
+    collectionType: 'Akcesoria',
   },
   22: {
     id: 22,
@@ -258,7 +266,7 @@ export const products: Products = {
     imagesCarousel: [band1, band2],
     price: 60,
     collectionMain: 'Kobieta',
-    collectionType: ['Bluzy','Kobieta'],
+    collectionType: 'Akcesoria',
   },
   23: {
     id: 23,
@@ -266,7 +274,7 @@ export const products: Products = {
     imageBackground: completBand1,
     imagesCarousel: [completBand1, completBand2],
     price: 90,
-    collectionType: ['Bluzy','Kobieta'],
+    collectionType: 'Komplety',
   }
 }
 
