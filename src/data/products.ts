@@ -62,12 +62,22 @@ import forestBag1b from '../assets/AreaOfChild/Accessories/forest-bag.1b.jpg'
 import forestBag1c from '../assets/AreaOfChild/Accessories/forest-bag.1c.jpg'
 export const products: Products = {
   All: {
+    id: 0,
     name: '(ProductsRoot)',
-    children: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+    children: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
+    collectionType: '',
   },
   Child: {
+    id: 0,
     name: '(ProductsChildRoot)',
-    children: [1,2,3,4,5]
+    children: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
+    collectionType: '',
+  },
+  Woman: {
+    id: 0,
+    name: '(ProductsWomanRoot)',
+    children: [22,23],
+    collectionType: '',
   },
   1: {
     id: 1,
@@ -140,7 +150,7 @@ export const products: Products = {
     imagesCarousel: [cherry1a, cherry1b, cherry1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Bluzy',
+    collectionType: 'Spódnice i sukienki',
   },
   9: {
     id: 9, 
@@ -158,7 +168,7 @@ export const products: Products = {
     imagesCarousel: [hearts1a, hearts1b, hearts1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Bluzy',
+    collectionType: 'Spódnice i sukienki',
   },
   11: {
     id: 11,
