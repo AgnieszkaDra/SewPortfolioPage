@@ -122,10 +122,10 @@ export const Navigation = () =>  {
               <StyledLink to={'/'}>Strona główna</StyledLink>
             </MenuElement>
             <MenuElement>
-              <StyledLink to={'/Dziecko'}>Strefa dziecka</StyledLink> 
+              <StyledLink to={'/category/Dziecko'}>Strefa dziecka</StyledLink> 
             </MenuElement>
             <MenuElement>
-              <StyledLink to={'/Kobieta'}>Strefa kobiet</StyledLink>
+              <StyledLink to={'/category/Kobieta'}>Strefa kobiet</StyledLink>
             </MenuElement>
           </ul>
         </div>

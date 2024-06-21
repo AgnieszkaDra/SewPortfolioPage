@@ -122,7 +122,7 @@ export const products: Products = {
     imagesCarousel: [violetComplet1a, violetComplet1b, violetComplet1c],
     price: 100,
     collectionMain: 'Dziecko',
-    collectionType: 'Komplety',
+    collectionType: 'Bluzy',
   },
   7: {
     id: 7,
@@ -131,7 +131,7 @@ export const products: Products = {
     imagesCarousel: [whale1a, whale1b, whale1c, whale1d],
     price: 100,
     collectionMain: 'Dziecko',
-    collectionType: 'Komplety',
+    collectionType: 'Bluzy',
   },
   8: {
     id: 8,
@@ -140,7 +140,7 @@ export const products: Products = {
     imagesCarousel: [cherry1a, cherry1b, cherry1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spódnice i sukienki',
+    collectionType: 'Bluzy',
   },
   9: {
     id: 9, 
@@ -158,7 +158,7 @@ export const products: Products = {
     imagesCarousel: [hearts1a, hearts1b, hearts1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spódnice i sukienki'
+    collectionType: 'Bluzy',
   },
   11: {
     id: 11,
@@ -185,7 +185,7 @@ export const products: Products = {
     imagesCarousel: [trousers1a],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spodnie'
+    collectionType: 'Bluzy',
   },
   14: {
     id: 14,

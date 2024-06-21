@@ -5,8 +5,8 @@ const Home = () => {
 
   return (
     <>
-        <Header />
-        <Outlet />
+      <Header />
+      <Outlet />
     </>
   );
 };

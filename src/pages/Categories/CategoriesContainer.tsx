@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink,  useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { AppState } from '../../../interfaces.ts';
-import products from '../../../data/products.ts';
-import { setCategories, setProducts, setLinkPath } from '../../../store/actions/actions.tsx';
+import { AppState } from '../../interfaces.ts'
+import products from '../../data/products.ts';
+import { setCategories, setLinkPath, setCollections } from '../../store/actions/actions.tsx';
 import styled from 'styled-components';
 
 const CategoriesWrapper = styled.ul`
@@ -96,16 +96,21 @@ const StyledArrow = styled.div`
 `
 
 const CategoriesContainer = () => {
-
+  const { Dziecko } = useParams()
+  const { Kobieta } = useParams()
+  console.log(Dziecko)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(setProducts(products))
+    // dispatch(setProducts(products))
     dispatch(setCategories(products));
+    dispatch(setCollections(products))
   }, [dispatch]);
-  
+
   const categories = useSelector((state: AppState) => state.productsElementsCategories);
   const categoriesProducts = Object.values(categories).map(product => product)
+  
+
 
   const handleLinkClick = (path: string) => {
     dispatch(setLinkPath(path));

@@ -1,6 +1,3 @@
-// import { useLocation } from 'react-router-dom';
-import React, { ReactNode } from 'react';
-import CategoriesContainer from "../../ui/Categories/CategoriesContainer";
 import Carousel from '../../ui/Carousel/Carousel';
 import carousel from '../../../data/carousel';
 import styled from 'styled-components';
@@ -12,21 +9,13 @@ const CarouselWrapper = styled.div`
   background-color: transparent;
 `;
 
-interface MainProps {
-  children: ReactNode; 
-}
 
-const Main: React.FC<MainProps> = ({ children }) => {
-  // const location = useLocation();
-  // const showCarousel = location.pathname === '/' || location.pathname === '/category';
- 
+const Main =() => {
   return (
     <main>
       <CarouselWrapper>
         <Carousel images={carousel} />
       </CarouselWrapper>
-      <CategoriesContainer/>
-      {children} 
     </main>
   );
 };
