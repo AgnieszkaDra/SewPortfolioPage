@@ -76,22 +76,24 @@ export interface CategoryProps {
 //    features?: string[];
 //    collection: string
 //  }
+
+
  
  export interface Products {
-   [key: number | string]: ProductItem;
+   [key: number | string]: ProductItem ;
  }
 
- export type CollectionType = "Bluzy" | "Spodnie" | "Komplety" | "Spódnice i sukienki" | "Akcesoria" | "Dziecko" | "Kobieta";
+ export type CollectionType = "Bluzy" | "Spodnie" | "Komplety" | "Spódnice i sukienki" | "Akcesoria" | "Dziecko" | "Kobieta" | ""
  export type CollectionMain = "Dziecko" | "CHILD" | "WOMAN" ;
  export interface ProductItem {
-   id?: number;
+   id: number;
    name: string;
-   children?: object;
+   children?: number[];
    imageBackground?: string;
    imagesCarousel?: string[];
    price?: number;
    collectionMain?: string;
-   collectionType?: CollectionType;
+   collectionType: CollectionType;
    features?: string[];
  }
 

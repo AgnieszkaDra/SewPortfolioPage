@@ -3,7 +3,7 @@ import { Products } from '../../interfaces';
 import { SET_PRODUCTS } from './actionTypes';
 import { SET_CATEGORIES } from './actionTypes';
 import { SET_CATEGORY_PRODUCTS } from './actionTypes';
-import { SET_COLLECTIONS } from './actionTypes';
+
 import { SET_LINK_PATH } from './actionTypes';
 
 export const setProducts = (products: Products) => ({
@@ -20,12 +20,6 @@ export const setCategoryProducts = (products: Products, collectionType: string )
     type: SET_CATEGORY_PRODUCTS,
     payload: products,
     collectionType
-});
-
-export const setCollections = (products: Products, collectionName: string) => ({
-    type: SET_COLLECTIONS,
-    payload: products,
-    collectionName
 });
 
 export const setLinkPath = (path: string) => ({
