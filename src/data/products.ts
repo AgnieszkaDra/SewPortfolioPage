@@ -61,6 +61,14 @@ import forestBag1a from '../assets/AreaOfChild/Accessories/forest-bag.1a.jpg'
 import forestBag1b from '../assets/AreaOfChild/Accessories/forest-bag.1b.jpg'
 import forestBag1c from '../assets/AreaOfChild/Accessories/forest-bag.1c.jpg'
 export const products: Products = {
+  All: {
+    name: '(ProductsRoot)',
+    children: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+  },
+  Child: {
+    name: '(ProductsChildRoot)',
+    children: [1,2,3,4,5]
+  },
   1: {
     id: 1,
     name: 'Bluza Ball',
@@ -141,7 +149,7 @@ export const products: Products = {
     imagesCarousel: [fairy1a, fairy1b],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spódnice i sukienki'
+    collectionType: 'Spódnice i sukienki',
   },
   10: {
     id: 10,
@@ -159,7 +167,7 @@ export const products: Products = {
     imagesCarousel: [trousersViolet1a, trousersViolet1b],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spodnie'
+    collectionType: 'Spodnie',
   },
   12: {
     id: 12,
@@ -168,7 +176,7 @@ export const products: Products = {
     imagesCarousel: [trousersWithRabbit1a, trousersWithRabbit1b, trousersWithRabbit1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spodnie'
+    collectionType: 'Spodnie',
   },
   13: {
     id: 13, 
@@ -186,7 +194,7 @@ export const products: Products = {
     imagesCarousel: [trousers1b],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spodnie'
+    collectionType: 'Spodnie',
   },
   15: {
     id: 15,
@@ -195,7 +203,7 @@ export const products: Products = {
     imagesCarousel: [trousers1c],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spodnie'
+    collectionType: 'Spodnie',
   },
   16: {
     id: 16,
@@ -204,7 +212,7 @@ export const products: Products = {
     imagesCarousel: [trousers1d],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spodnie'
+    collectionType: 'Spodnie',
   },
   17: {
     id: 17,
@@ -213,7 +221,7 @@ export const products: Products = {
     imagesCarousel: [trousers1e],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spodnie'
+    collectionType: 'Spodnie',
   },
   18: {
     id: 18,
@@ -222,7 +230,7 @@ export const products: Products = {
     imagesCarousel: [trousers1f],
     price: 90,
     collectionMain: 'Dziecko',
-    collectionType: 'Spodnie'
+    collectionType: 'Spodnie',
   },
   19: {
     id: 19,
@@ -231,7 +239,7 @@ export const products: Products = {
     imagesCarousel: [cap1a, cap1b],
     price: 100,
     collectionMain: 'Dziecko',
-    collectionType: 'Komplety'
+    collectionType: 'Komplety',
   },
   20: {
     id: 20, 
@@ -240,7 +248,7 @@ export const products: Products = {
     imagesCarousel: [cap2a, cap2b, cap2c],
     price: 120,
     collectionMain: 'Dziecko',
-    collectionType: 'Akcesoria'
+    collectionType: 'Akcesoria',
   },
   21: {
     id: 21,
@@ -249,7 +257,7 @@ export const products: Products = {
     imagesCarousel: [forestBag1a, forestBag1b, forestBag1c],
     price: 50,
     collectionMain: 'Dziecko',
-    collectionType: 'Akcesoria'
+    collectionType: 'Akcesoria',
   },
   22: {
     id: 22,
@@ -258,7 +266,7 @@ export const products: Products = {
     imagesCarousel: [band1, band2],
     price: 60,
     collectionMain: 'Kobieta',
-    collectionType: 'Akcesoria'
+    collectionType: 'Akcesoria',
   },
   23: {
     id: 23,
@@ -266,8 +274,7 @@ export const products: Products = {
     imageBackground: completBand1,
     imagesCarousel: [completBand1, completBand2],
     price: 90,
-    collectionMain: 'Kobieta',
-    collectionType: 'Akcesoria'
+    collectionType: 'Komplety',
   }
 }
 

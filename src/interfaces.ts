@@ -77,19 +77,20 @@ export interface CategoryProps {
 //  }
  
  export interface Products {
-   [key: number]: ProductItem;
+   [key: number | string]: ProductItem;
  }
 
  export type CollectionType = "Bluzy" | "Spodnie" | "Komplety" | "Spódnice i sukienki" | "Akcesoria";
  
  export interface ProductItem {
-   id: number;
+   id?: number;
    name: string;
-   imageBackground: string;
-   imagesCarousel: string[];
-   price: number;
-   collectionMain: string;
-   collectionType: CollectionType;
+   children?: object;
+   imageBackground?: string;
+   imagesCarousel?: string[];
+   price?: number;
+   collectionMain?: string;
+   collectionType?: CollectionType;
    features?: string[];
  }
 
