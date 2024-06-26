@@ -1,6 +1,6 @@
 **Overview**
 
-Sew Portfolio Page is a project written with React and TypeScript(to practise it) and will be in the future a part of the whole website https://merry-bombolone-6f9da6.netlify.app/
+The Sew Portfolio Page application is a showcase website featuring handmade sewn clothes. It is designed to potentially become a full-fledged shop.
 <p>
   <img src="./src/assets/image-readme.png" alt="view" width="100%" max-width="600px"/>
 </p>
@@ -10,7 +10,8 @@ Sew Portfolio Page is a project written with React and TypeScript(to practise it
 [![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)] [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)]
 
 🖥 **Features**
-- **No subpages**:  In this project, features of product are presented without navigating to subpages.
+- **Some subpages**: In this project, all products are displayed across multiple subpages according to the collection selected by the user.
+- **Usable code**: The code is written in a way that it can serve as a full-stack shop application in the future.
 
 # React + TypeScript + Vite
 
